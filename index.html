@@ -1,0 +1,2567 @@
+rbitron', 'sans-serif'],
+            rajdhani: ['Rajdhani', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          boxShadow: {
+            'cyan-glow': '0 0 25px -5px rgba(0, 242, 255, 0.4)',
+            'violet-glow': '0 0 25px -5px rgba(176, 38, 255, 0.4)',
+            'amber-glow': '0 0 25px -5px rgba(255, 170, 0, 0.4)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Scanlines effect */
+    .scanlines {
+      background: linear-gradient(
+        rgba(18, 16, 16, 0) 50<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVA // CYBERMARKET — Year 2142 Spec Hardware</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Three.js for 3D Hologram Viewer -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            void: '#07080d',
+            voidcard: '#0d101b',
+            neonCyan: '#00f2ff',
+            neonViolet: '#b026ff',
+            neonAmber: '#ffaa00',
+            neonGreen: '#00ff66',
+          },
+          fontFamily: {
+            orbitron: ['O%, 
+        rgba(0, 0, 0, 0.25) 50%
+      ), linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 0.03),
+        rgba(0, 255, 0, 0.01),
+        rgba(0, 0, 255, 0.03)
+      );
+      background-size: 100% 3px, 6px 100%;
+      pointer-events: none;
+    }
+
+    /* Cyber grid overlay */
+    .cyber-grid {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(0, 242, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #07080d;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1a2238;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00f2ff;
+    }
+
+    /* Glass blur effect */
+    .glass-panel {
+      background: rgba(13, 16, 27, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(0, 242, 255, 0.15);
+    }
+
+    /* Neon border animations */
+    .hover-glow {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .hover-glow:hover {
+      border-color: rgba(0, 242, 255, 0.6);
+      box-shadow: 0 0 20px rgba(0, 242, 255, 0.25);
+      transform: translateY(-2px);
+    }
+
+    /* Retinal scanner animation */
+    @keyframes scanline-bar {
+      0% { top: 0%; opacity: 0.8; }
+      50% { opacity: 1; }
+      100% { top: 96%; opacity: 0.8; }
+    }
+    .scanner-line {
+      animation: scanline-bar 1.5s ease-in-out infinite alternate;
+    }
+  </style>
+</head>
+<body class="bg-void text-slate-200 font-rajdhani selection:bg-neonCyan selection:text-black overflow-x-hidden relative min-h-screen">
+
+  <!-- Scanlines overlay for futuristic CRT feel -->
+  <div class="fixed inset-0 scanlines z-40 pointer-events-none opacity-40"></div>
+  
+  <!-- Subtle Grid BG -->
+  <div class="fixed inset-0 cyber-grid z-0 pointer-events-none opacity-70"></div>
+
+  <!-- Top Status Bar -->
+  <div class="relative z-30 border-b border-cyan-500/20 bg-void/90 text-[11px] font-mono tracking-widest text-cyan-400/80 px-4 py-1.5 flex justify-between items-center">
+    <div class="flex items-center space-x-4">
+      <span class="inline-flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-neonGreen animate-ping"></span>
+        <span class="w-2 h-2 rounded-full bg-neonGreen absolute"></span>
+        SYNAPSE NETWORK: <strong class="text-neonGreen">ONLINE (v8.94)</strong>
+      </span>
+      <span class="hidden md:inline text-slate-500">|</span>
+      <span class="hidden md:inline text-slate-400">NODE LATENCY: <span id="pingValue" class="text-cyan-300">12</span> ms</span>
+    </div>
+    <div class="flex items-center space-x-3">
+      <span>QUANTUM SECURITY LAYER: ACTIVE</span>
+      <span class="hidden sm:inline bg-cyan-950/80 border border-cyan-500/30 text-neonCyan px-2 py-0.5 rounded text-[10px]">SECTOR 07</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-30 glass-panel border-b border-cyan-500/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="relative w-10 h-10 border border-neonCyan flex items-center justify-center rounded-sm bg-cyan-950/30 group-hover:shadow-cyan-glow transition-all">
+          <span class="font-orbitron font-black text-neonCyan text-xl">N</span>
+          <div class="absolute -top-1 -right-1 w-2 h-2 bg-neonViolet"></div>
+          <div class="absolute -bottom-1 -left-1 w-2 h-2 bg-neonCyan"></div>
+        </div>
+        <div>
+          <span class="font-orbitron font-black tracking-widest text-xl text-white block leading-none">NOVA<span class="text-neonCyan">//</span>CYBER</span>
+          <span class="font-mono text-[9px] tracking-widest text-neonViolet font-bold uppercase">Synthetics & Tech</span>
+        </div>
+      </a>
+
+      <!-- Quick Category Nav (Desktop) -->
+      <nav class="hidden lg:flex items-center space-x-6 text-sm font-semibold tracking-wider font-orbitron">
+        <button onclick="setFilter('all')" class="nav-item text-slate-300 hover:text-neonCyan transition-colors">ALL GEAR</button>
+        <button onclick="setFilter('Cybernetics')" class="nav-item text-slate-400 hover:text-neonCyan transition-colors">CYBERNETICS</button>
+        <button onclick="setFilter('Neural Implants')" class="nav-item text-slate-400 hover:text-neonCyan transition-colors">NEURAL LINK</button>
+        <button onclick="setFilter('Quantum Hardware')" class="nav-item text-slate-400 hover:text-neonCyan transition-colors">QUANTUM CORES</button>
+        <button onclick="setFilter('Exosuits')" class="nav-item text-slate-400 hover:text-neonCyan transition-colors">EXOSUITS</button>
+      </nav>
+
+      <!-- Currency Switcher & Actions -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        <!-- Currency Select -->
+        <div class="relative">
+          <select id="currencySelector" onchange="changeCurrency(this.value)" class="bg-voidcard/90 border border-cyan-500/30 rounded px-2.5 py-1 text-xs font-mono text-neonCyan focus:outline-none focus:border-neonCyan transition-colors cursor-pointer">
+            <option value="CREDITS">₢ Credits</option>
+            <option value="NEO_ETH">Ξ Neo-ETH</option>
+            <option value="SOL_PRIME">◎ SOL-Prime</option>
+          </select>
+        </div>
+
+        <!-- Cart Button -->
+        <button id="cartBtn" onclick="toggleCartDrawer(true)" class="relative p-2.5 bg-voidcard border border-cyan-500/40 rounded-sm hover:border-neonCyan hover:shadow-cyan-glow transition-all flex items-center justify-center group" aria-label="Open Cart">
+          <svg class="w-5 h-5 text-neonCyan group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span id="cartCountBadge" class="absolute -top-1.5 -right-1.5 bg-neonViolet text-white font-mono text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border border-void">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-12 pb-16 md:pt-20 md:pb-24 border-b border-cyan-500/20 overflow-hidden">
+    <!-- Ambient backlights -->
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-neonCyan/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 right-1/4 w-96 h-96 bg-neonViolet/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Hero Text -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-cyan-950/40 border border-cyan-500/40 rounded-full text-neonCyan font-mono text-xs tracking-wider">
+            <span class="w-1.5 h-1.5 bg-neonCyan rounded-full animate-pulse"></span>
+            NEXT-GEN AUGMENTATION PROTOCOL [2142]
+          </div>
+          
+          <h1 class="text-4xl sm:text-6xl font-black font-orbitron tracking-tight leading-tight text-white uppercase">
+            Transcend <br class="hidden sm:inline" />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-neonCyan via-indigo-300 to-neonViolet">
+              Organic Limits
+            </span>
+          </h1>
+
+          <p class="text-slate-400 font-rajdhani text-lg sm:text-xl max-w-xl mx-auto lg:mx-0">
+            Official distributor of military-grade wetware, sub-atomic quantum processing units, and neural combat implants verified by the Neo-Tokyo Syndicate.
+          </p>
+
+          <!-- Search & Filter Quick Bar -->
+          <div class="pt-2 flex flex-col sm:flex-row gap-3 max-w-lg mx-auto lg:mx-0">
+            <div class="relative flex-grow">
+              <span class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-slate-500">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+              </span>
+              <input type="text" id="searchInput" oninput="handleSearch(this.value)" placeholder="Search wetware, implants, cores..." class="w-full bg-voidcard/90 border border-cyan-500/30 rounded pl-10 pr-4 py-2.5 text-sm font-mono text-white placeholder-slate-500 focus:outline-none focus:border-neonCyan focus:shadow-cyan-glow transition-all" />
+            </div>
+            <a href="#marketCatalog" class="px-6 py-2.5 bg-neonCyan text-void font-orbitron font-bold text-sm tracking-wider uppercase rounded hover:bg-white hover:shadow-cyan-glow transition-all flex items-center justify-center gap-2">
+              Browse Grid
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </a>
+          </div>
+
+          <!-- Mini stats ticker -->
+          <div class="grid grid-cols-3 gap-3 pt-6 border-t border-slate-800 max-w-md mx-auto lg:mx-0 font-mono text-xs">
+            <div>
+              <p class="text-slate-500">NEURAL SYNC</p>
+              <p class="text-neonCyan font-bold text-sm">99.982%</p>
+            </div>
+            <div>
+              <p class="text-slate-500">SECURITY</p>
+              <p class="text-neonViolet font-bold text-sm">MIL-SPEC 6</p>
+            </div>
+            <div>
+              <p class="text-slate-500">WARRANTY</p>
+              <p class="text-neonAmber font-bold text-sm">50 SOLAR CYCLES</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured 3D Hologram Preview Hero Box -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative glass-panel rounded-lg p-5 border border-cyan-500/30 overflow-hidden shadow-2xl">
+            <!-- Corner decoration -->
+            <div class="absolute top-0 right-0 border-t-2 border-r-2 border-neonCyan w-4 h-4"></div>
+            <div class="absolute bottom-0 left-0 border-b-2 border-l-2 border-neonViolet w-4 h-4"></div>
+
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-xs font-mono text-slate-400">
+              <span class="flex items-center gap-1.5 text-neonCyan">
+                <span class="w-2 h-2 rounded-full bg-neonCyan animate-ping"></span>
+                HOLOGRAM SIMULATOR
+              </span>
+              <span class="text-[10px] text-slate-500">LIVE RENDER V1.4</span>
+            </div>
+
+            <!-- Canvas Container -->
+            <div id="heroCanvasContainer" class="relative w-full h-72 sm:h-80 bg-void/80 rounded flex items-center justify-center my-3 cursor-grab active:cursor-grabbing border border-cyan-900/40">
+              <div id="canvasLoader" class="text-xs font-mono text-slate-500 animate-pulse">SYNTHESIZING MATRIX...</div>
+              <canvas id="heroThreeCanvas" class="w-full h-full"></canvas>
+              
+              <!-- Viewer Controls floating overlay -->
+              <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono pointer-events-none">
+                <span class="bg-black/70 px-2 py-1 rounded text-slate-300 border border-slate-800 pointer-events-auto">Drag to rotate</span>
+                <button onclick="toggleWireframeHero()" class="bg-cyan-950/80 px-2 py-1 rounded text-neonCyan border border-cyan-500/40 hover:bg-cyan-900 pointer-events-auto transition-colors">
+                  Wireframe: <span id="wireframeHeroStatus">ON</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex justify-between items-center font-orbitron">
+                <h3 id="heroFeaturedTitle" class="text-base font-bold text-white tracking-wide">CHRONOS QUANTUM CORE-9</h3>
+                <span id="heroFeaturedPrice" class="text-neonCyan font-mono font-bold">₢ 8,450</span>
+              </div>
+              <p class="text-xs text-slate-400 font-rajdhani line-clamp-2">
+                Nanite-infused overclocked multi-state quantum compute engine for neural synchronization and temporal computation.
+              </p>
+              <button onclick="quickAddFeaturedHero()" class="w-full py-2 bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-500 hover:to-cyan-400 text-void font-orbitron font-bold text-xs uppercase tracking-wider rounded transition-all shadow-cyan-glow flex items-center justify-center gap-2 mt-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                Insta-Acquire Unit
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter & Catalog Section -->
+  <main id="marketCatalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    
+    <!-- Controls Bar -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pb-8 border-b border-cyan-500/20">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-black font-orbitron tracking-wide text-white uppercase flex items-center gap-2">
+          <span class="w-2 h-6 bg-neonCyan inline-block"></span>
+          Hardware Vault
+        </h2>
+        <p class="text-xs sm:text-sm font-mono text-slate-400 mt-1">Showing <span id="itemCountDisplay" class="text-neonCyan">0</span> verified cybernetic artefacts</p>
+      </div>
+
+      <!-- Categories Pills -->
+      <div class="flex flex-wrap gap-2 text-xs font-mono">
+        <button onclick="setFilter('all')" class="cat-pill active px-3.5 py-1.5 rounded border border-cyan-500 bg-cyan-950/60 text-neonCyan font-bold transition-all">ALL</button>
+        <button onclick="setFilter('Cybernetics')" class="cat-pill px-3.5 py-1.5 rounded border border-slate-800 bg-voidcard text-slate-400 hover:border-cyan-500 hover:text-white transition-all">CYBERNETICS</button>
+        <button onclick="setFilter('Neural Implants')" class="cat-pill px-3.5 py-1.5 rounded border border-slate-800 bg-voidcard text-slate-400 hover:border-cyan-500 hover:text-white transition-all">NEURAL IMPLANTS</button>
+        <button onclick="setFilter('Quantum Hardware')" class="cat-pill px-3.5 py-1.5 rounded border border-slate-800 bg-voidcard text-slate-400 hover:border-cyan-500 hover:text-white transition-all">QUANTUM HARDWARE</button>
+        <button onclick="setFilter('Exosuits')" class="cat-pill px-3.5 py-1.5 rounded border border-slate-800 bg-voidcard text-slate-400 hover:border-cyan-500 hover:text-white transition-all">EXOSUITS</button>
+        <button onclick="setFilter('Energy Weapons')" class="cat-pill px-3.5 py-1.5 rounded border border-slate-800 bg-voidcard text-slate-400 hover:border-cyan-500 hover:text-white transition-all">ENERGY WEAPONS</button>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pt-8">
+      <!-- Dynamic cards rendered by JS -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="emptyCatalogState" class="hidden text-center py-20">
+      <div class="w-16 h-16 mx-auto mb-4 border border-dashed border-neonCyan/40 rounded-full flex items-center justify-center text-neonCyan">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      </div>
+      <h3 class="font-orbitron text-xl text-white">NO CIPHER MATCH FOUND</h3>
+      <p class="font-mono text-sm text-slate-400 mt-2">Adjust your query or recalibrate sensor parameters.</p>
+      <button onclick="setFilter('all'); document.getElementById('searchInput').value = ''; handleSearch('');" class="mt-4 px-4 py-2 border border-neonCyan text-neonCyan text-xs font-mono uppercase hover:bg-neonCyan/20 rounded">Reset Database Filters</button>
+    </div>
+  </main>
+
+  <!-- Interactive 3D Hologram Inspection Modal -->
+  <div id="hologramModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="relative w-full max-w-4xl glass-panel rounded-lg border border-cyan-500/40 p-6 overflow-hidden shadow-cyan-glow">
+      
+      <!-- Close button -->
+      <button onclick="closeHologramModal()" class="absolute top-4 right-4 text-slate-400 hover:text-neonCyan p-1 rounded transition-colors" aria-label="Close modal">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+        <!-- 3D Canvas Box -->
+        <div class="md:col-span-7 relative h-80 sm:h-96 bg-void/90 rounded border border-cyan-500/30 overflow-hidden flex items-center justify-center">
+          <canvas id="modalThreeCanvas" class="w-full h-full cursor-grab active:cursor-grabbing"></canvas>
+          
+          <!-- Scanline overlay for modal viewer -->
+          <div class="absolute inset-0 scanlines pointer-events-none opacity-20"></div>
+
+          <!-- Quick Canvas Switchers -->
+          <div class="absolute bottom-3 left-3 flex gap-2 text-[10px] font-mono">
+            <button onclick="toggleModalWireframe()" class="px-2 py-1 rounded bg-black/80 border border-cyan-500/40 text-neonCyan hover:bg-cyan-950 transition-colors">
+              Wireframe: <span id="modalWireframeLabel">OFF</span>
+            </button>
+            <button onclick="toggleModalRotation()" class="px-2 py-1 rounded bg-black/80 border border-slate-700 text-slate-300 hover:text-white transition-colors">
+              Spin: <span id="modalSpinLabel">AUTO</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Spec Data & Purchase -->
+        <div class="md:col-span-5 space-y-4">
+          <div class="border-b border-slate-800 pb-3">
+            <span id="modalCategoryBadge" class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950 text-neonCyan border border-cyan-800">CATEGORY</span>
+            <h3 id="modalProductTitle" class="text-xl sm:text-2xl font-black font-orbitron text-white mt-1">PRODUCT SPEC</h3>
+            <p id="modalProductPrice" class="text-lg font-mono font-bold text-neonCyan">₢ 0.00</p>
+          </div>
+
+          <p id="modalProductDesc" class="text-sm text-slate-300 font-rajdhani leading-relaxed"></p>
+
+          <!-- Neural Spec Matrix -->
+          <div class="space-y-2 bg-voidcard/60 p-3 rounded border border-slate-800 text-xs font-mono">
+            <div class="text-[10px] text-neonViolet font-bold uppercase tracking-wider">Neural Telemetry Spec</div>
+            <div class="flex justify-between py-1 border-b border-slate-800/80">
+              <span class="text-slate-400">Synaptic Latency</span>
+              <span id="modalSpecLatency" class="text-neonCyan font-semibold">&lt; 0.4ms</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-slate-800/80">
+              <span class="text-slate-400">Bandwidth Density</span>
+              <span id="modalSpecBandwidth" class="text-slate-200 font-semibold">12.8 TB/s</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-slate-800/80">
+              <span class="text-slate-400">Quantum Battery</span>
+              <span id="modalSpecPower" class="text-neonAmber font-semibold">96.4 hrs</span>
+            </div>
+            <div class="flex justify-between py-1">
+              <span class="text-slate-400">Nanite Integrity</span>
+              <span class="text-neonGreen font-semibold">100% Autonomous</span>
+            </div>
+          </div>
+
+          <button id="modalAddToCartBtn" class="w-full py-3 bg-neonCyan hover:bg-white text-void font-orbitron font-bold text-sm tracking-wider uppercase rounded transition-all shadow-cyan-glow flex items-center justify-center gap-2">
+            Add to Neural Synapse Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div id="cartDrawer" class="fixed inset-y-0 right-0 w-full max-w-md bg-voidcard/95 backdrop-blur-xl border-l border-cyan-500/30 z-50 transform translate-x-full transition-transform duration-300 flex flex-col shadow-2xl">
+    
+    <!-- Drawer Header -->
+    <div class="p-5 border-b border-cyan-500/20 flex items-center justify-between">
+      <div class="flex items-center gap-2 font-orbitron">
+        <span class="w-3 h-3 bg-neonCyan rounded-sm rotate-45"></span>
+        <h3 class="text-lg font-bold text-white tracking-wider">QUANTUM SYNC CART</h3>
+      </div>
+      <button onclick="toggleCartDrawer(false)" class="text-slate-400 hover:text-white p-1 rounded" aria-label="Close cart drawer">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <!-- Items List -->
+    <div id="cartItemsList" class="flex-1 overflow-y-auto p-5 space-y-4">
+      <!-- Items dynamically populated -->
+    </div>
+
+    <!-- Drawer Footer -->
+    <div class="p-5 border-t border-cyan-500/20 bg-void/90 space-y-3 font-mono">
+      <div class="flex justify-between text-xs text-slate-400">
+        <span>Subtotal</span>
+        <span id="cartSubtotalText">₢ 0.00</span>
+      </div>
+      <div class="flex justify-between text-xs text-slate-400">
+        <span>Syndicate Tariff (4%)</span>
+        <span id="cartTaxText">₢ 0.00</span>
+      </div>
+      <div class="flex justify-between text-base font-bold text-neonCyan pt-2 border-t border-slate-800">
+        <span class="font-orbitron">TOTAL ESTIMATE</span>
+        <span id="cartTotalText">₢ 0.00</span>
+      </div>
+
+      <button id="checkoutBtn" onclick="initiateBiometricCheckout()" class="w-full py-3.5 bg-gradient-to-r from-neonCyan via-cyan-400 to-neonViolet text-void font-orbitron font-extrabold text-sm tracking-wider uppercase rounded transition-all shadow-cyan-glow hover:brightness-110 active:scale-95 flex items-center justify-center gap-2 mt-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+        Biometric Checkout
+      </button>
+
+      <p class="text-[10px] text-center text-slate-500 pt-1">SECURED BY 512-BIT QUANTUM HASH</p>
+    </div>
+  </div>
+
+  <!-- Retinal / Biometric Checkout Simulation Modal -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-lg hidden flex items-center justify-center p-4">
+    <div class="relative w-full max-w-md glass-panel rounded-lg border border-neonCyan/50 p-6 text-center overflow-hidden shadow-cyan-glow">
+      
+      <!-- Scan Reticle -->
+      <div class="relative w-36 h-36 mx-auto my-4 border-2 border-neonCyan/60 rounded-full flex items-center justify-center overflow-hidden bg-cyan-950/20">
+        <!-- Circular crosshair -->
+        <div class="absolute inset-2 border border-dashed border-neonViolet/50 rounded-full"></div>
+        <div class="w-16 h-16 rounded-full border border-neonCyan flex items-center justify-center">
+          <svg class="w-8 h-8 text-neonCyan animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+        </div>
+        
+        <!-- Laser Scanner Bar -->
+        <div class="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-neonCyan to-transparent scanner-line"></div>
+      </div>
+
+      <div class="space-y-2">
+        <h3 id="checkoutStateTitle" class="text-xl font-bold font-orbitron text-white uppercase">SYNAPSE BIOMETRIC AUTH</h3>
+        <p id="checkoutStateDesc" class="text-xs font-mono text-cyan-400">ALIGNING OPTIC RETINA WITH QUANTUM NODE...</p>
+      </div>
+
+      <!-- Simulated Progress Meter -->
+      <div class="w-full bg-slate-900 rounded-full h-2 my-5 overflow-hidden border border-cyan-900">
+        <div id="checkoutProgressBar" class="bg-gradient-to-r from-neonCyan to-neonViolet h-full w-0 transition-all duration-300"></div>
+      </div>
+
+      <div id="checkoutTelemetryLog" class="text-[11px] font-mono text-slate-400 bg-void/80 p-2.5 rounded border border-slate-800 text-left h-20 overflow-y-auto space-y-1">
+        <div>&gt; Initiating handshake with Satellite Hub-09...</div>
+      </div>
+
+      <div id="checkoutSuccessActions" class="hidden mt-6">
+        <button onclick="closeCheckoutModal()" class="w-full py-2.5 bg-neonGreen text-black font-orbitron font-bold text-xs uppercase rounded hover:bg-white transition-all shadow-lg">
+          Acknowledge & Close Transmission
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating AI Assistant ('AURA') Widget -->
+  <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end">
+    
+    <!-- AI Dialogue Bubble -->
+    <div id="auraChatBox" class="hidden w-80 sm:w-96 glass-panel rounded-lg border border-neonCyan/40 p-4 mb-3 shadow-cyan-glow flex flex-col space-y-3">
+      <div class="flex items-center justify-between pb-2 border-b border-slate-800">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-neonCyan animate-ping"></span>
+          <span class="font-orbitron font-bold text-xs text-white">AURA // SYNTHESIS AI</span>
+        </div>
+        <span class="text-[10px] font-mono text-neonCyan bg-cyan-950/80 px-1.5 py-0.5 rounded">ONLINE</span>
+      </div>
+
+      <!-- Dialogue history -->
+      <div id="auraMessages" class="max-h-56 overflow-y-auto text-xs font-mono space-y-2 pr-1">
+        <div class="p-2 bg-void rounded border border-slate-800 text-slate-300">
+          <strong class="text-neonCyan">AURA:</strong> Greetings, organic entity. I can recommend optimal wetware, check quantum core compatibility, or clarify synaptic latency ratings.
+        </div>
+      </div>
+
+      <!-- Quick prompts -->
+      <div class="flex flex-wrap gap-1.5 pt-1">
+        <button onclick="askAura('Which implant has lowest latency?')" class="text-[10px] font-mono bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 px-2 py-1 rounded hover:bg-cyan-900 transition-colors">Lowest latency?</button>
+        <button onclick="askAura('Best gear for tactical combat?')" class="text-[10px] font-mono bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 px-2 py-1 rounded hover:bg-cyan-900 transition-colors">Tactical gear?</button>
+        <button onclick="askAura('How does quantum sync checkout work?')" class="text-[10px] font-mono bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 px-2 py-1 rounded hover:bg-cyan-900 transition-colors">Payment safety?</button>
+      </div>
+
+      <!-- Text Input -->
+      <div class="flex gap-2">
+        <input type="text" id="auraInput" onkeydown="if(event.key==='Enter') submitAuraMessage()" placeholder="Inquire with AURA..." class="flex-1 bg-void border border-slate-800 rounded px-2.5 py-1.5 text-xs text-white font-mono focus:outline-none focus:border-neonCyan" />
+        <button onclick="submitAuraMessage()" class="px-3 bg-neonCyan text-void font-bold text-xs rounded hover:bg-white transition-colors">
+          SEND
+        </button>
+      </div>
+    </div>
+
+    <!-- Toggle Button -->
+    <button onclick="toggleAuraChat()" class="relative group p-3.5 bg-voidcard border border-neonCyan rounded-full shadow-cyan-glow hover:scale-105 transition-all flex items-center justify-center">
+      <svg class="w-6 h-6 text-neonCyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+      <span class="absolute -top-1 -right-1 w-3 h-3 bg-neonViolet rounded-full border-2 border-void animate-pulse"></span>
+    </button>
+  </div>
+
+  <!-- Cyberpunk Footer -->
+  <footer class="border-t border-cyan-500/20 bg-void/90 relative z-20 mt-16 font-mono text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div class="space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="font-orbitron font-bold text-white text-base">NOVA<span class="text-neonCyan">//</span>CYBER</span>
+          </div>
+          <p class="text-slate-500 text-xs">Pioneering synthetic evolution across the outer colonies since 2088. Fully compliant with Megacity 4 Bio-Standards.</p>
+        </div>
+
+        <div>
+          <h4 class="font-orbitron text-white font-semibold mb-3">SECTORS</h4>
+          <ul class="space-y-2 text-slate-400">
+            <li><a href="#" class="hover:text-neonCyan">Sector 01: Core Systems</a></li>
+            <li><a href="#" class="hover:text-neonCyan">Sector 04: Wetware Labs</a></li>
+            <li><a href="#" class="hover:text-neonCyan">Sector 09: Orbital Yard</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-orbitron text-white font-semibold mb-3">SECURITY PROTOCOLS</h4>
+          <ul class="space-y-2 text-slate-400">
+            <li>Neural Hash Verification</li>
+            <li>Zero-Trace Memory Flush</li>
+            <li>Mil-Spec RMA Guarantee</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-orbitron text-white font-semibold mb-3">QUANTUM DISPATCH</h4>
+          <p class="text-slate-500 mb-2">Subscribe to sub-ether drops & classified prototypes.</p>
+          <div class="flex">
+            <input type="email" placeholder="neural-id@domain.neo" class="bg-voidcard border border-slate-800 rounded-l px-3 py-1.5 text-xs text-white focus:outline-none focus:border-neonCyan w-full" />
+            <button onclick="simulateSubscribe()" class="bg-neonCyan text-void font-bold px-3 py-1.5 rounded-r hover:bg-white transition-colors">LINK</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between text-slate-500 text-[11px]">
+        <div>© 2142 NOVA CYBERMARKET INC. ALL QUANTUM THREADS RESERVED.</div>
+        <div class="mt-2 sm:mt-0 flex gap-4">
+          <span>LATENCY: 12ms</span>
+          <span>ENCRYPTION: AES-QUANTUM-4096</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Notification Toast Container -->
+  <div id="toastContainer" class="fixed top-6 right-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- APPLICATION LOGIC SCRIPT -->
+  <script>
+    /* ==========================================================================
+       1. DATA DEFINITIONS & DATABASE
+       ========================================================================== */
+    const PRODUCTS = [
+      {
+        id: 'CORE-09',
+        name: 'Chronos Quantum Core-9',
+        category: 'Quantum Hardware',
+        price: 8450,
+        badge: 'HOT / OVERCLOCKED',
+        desc: 'Sub-atomic quantum computing array delivering 12.8 PetaFlops of synchronized biological neuro-processing with automated liquid thermal dispersal.',
+        specs: { latency: '0.12 ms', bandwidth: '18.4 TB/s', power: '98.5 hrs', shape: 'cube' }
+      },
+      {
+        id: 'NEURO-X',
+        name: 'Synapse Ghost Link IV',
+        category: 'Neural Implants',
+        price: 4200,
+        badge: 'STEALTH SPEC',
+        desc: 'Cerebral cortex overlay enabling zero-latency wireless brain-computer interfacing with automatic sensor noise suppression.',
+        specs: { latency: '0.04 ms', bandwidth: '9.2 TB/s', power: '140 hrs', shape: 'torus' }
+      },
+      {
+        id: 'ARM-TITAN',
+        name: 'Valkyrie Carbon Bionic Arm',
+        category: 'Cybernetics',
+        price: 12500,
+        badge: 'TITANIUM GRADE',
+        desc: 'Class 4 military prosthetics forged with woven graphene, integrated micro-servos, and 2.4-ton hydraulic crush capacity.',
+        specs: { latency: '0.45 ms', bandwidth: '4.8 TB/s', power: '72.0 hrs', shape: 'cylinder' }
+      },
+      {
+        id: 'EXO-PHANTOM',
+        name: 'Phantom Nanite Infiltration Suit',
+        category: 'Exosuits',
+        price: 24900,
+        badge: 'TACTICAL ELITE',
+        desc: 'Full-body kinetic dispersal armor capable of optical bending, active heat-signature baffling, and ballistic impact absorption.',
+        specs: { latency: '0.30 ms', bandwidth: '6.4 TB/s', power: '48.0 hrs', shape: 'octahedron' }
+      },
+      {
+        id: 'OCULAR-PRO',
+        name: 'Ocular-9 Holographic Retina',
+        category: 'Cybernetics',
+        price: 3600,
+        badge: 'AUGMENTED HUD',
+        desc: 'Full-spectrum ocular unit with multi-band thermal imagery, target projection telemetry, and 80x lossless optical magnification.',
+        specs: { latency: '0.01 ms', bandwidth: '24.0 TB/s', power: '360 hrs', shape: 'sphere' }
+      },
+      {
+        id: 'WEAPON-PULSE',
+        name: 'Hyperion Plasma Scatter Pistol',
+        category: 'Energy Weapons',
+        price: 15800,
+        badge: 'HIGH HAZARD',
+        desc: 'Compact pulse weapon firing ionized plasma bolts with built-in magnetic containment coils and biometric owner locks.',
+        specs: { latency: '0.08 ms', bandwidth: '1.2 TB/s', power: '24.0 hrs', shape: 'cone' }
+      },
+      {
+        id: 'NEURAL-BOOST',
+        name: 'Aether Neuro-Stim Dispenser',
+        category: 'Neural Implants',
+        price: 1950,
+        badge: 'BIO-ENHANCER',
+        desc: 'Autonomous subdermal micro-injector delivering targeted nootropic nanites directly to dopamine & adrenaline receptors during stress spikes.',
+        specs: { latency: '0.02 ms', bandwidth: '2.1 TB/s', power: '200 hrs', shape: 'dodecahedron' }
+      },
+      {
+        id: 'DRIVE-WARP',
+        name: 'Void-Drive Telemetry Unit',
+        category: 'Quantum Hardware',
+        price: 32000,
+        badge: 'EXPERIMENTAL',
+        desc: 'Sub-space navigation relay designed for deep orbital vessels needing immediate real-time trajectory computing across wormhole anomalies.',
+        specs: { latency: '0.005 ms', bandwidth: '64.0 TB/s', power: '12 hrs', shape: 'icosahedron' }
+      }
+    ];
+
+    const CURRENCY_RATES = {
+      CREDITS: { symbol: '₢', rate: 1.0, precision: 0 },
+      NEO_ETH: { symbol: 'Ξ', rate: 0.00031, precision: 3 },
+      SOL_PRIME: { symbol: '◎', rate: 0.0062, precision: 2 }
+    };
+
+    let currentCurrency = 'CREDITS';
+    let currentFilter = 'all';
+    let searchQuery = '';
+    let cart = [];
+    let modalSelectedProduct = null;
+
+    /* ==========================================================================
+       2. THREE.JS 3D HOLOGRAM SIMULATION ENGINE
+       ========================================================================== */
+    // Hero 3D Viewer variables
+    let heroScene, heroCamera, heroRenderer, heroMesh;
+    let heroWireframe = true;
+
+    // Modal 3D Viewer variables
+    let modalScene, modalCamera, modalRenderer, modalMesh;
+    let modalWireframe = false;
+    let modalAutoRotate = true;
+
+    function initHeroThreeJS() {
+      const container = document.getElementById('heroCanvasContainer');
+      const canvas = document.getElementById('heroThreeCanvas');
+      if (!container || !canvas) return;
+
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+
+      heroScene = new THREE.Scene();
+      heroCamera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+      heroCamera.position.z = 4.5;
+
+      heroRenderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+      heroRenderer.setSize(width, height);
+      heroRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      // Create Holographic Mesh
+      const geometry = new THREE.IcosahedronGeometry(1.6, 2);
+      const material = new THREE.MeshBasicMaterial({
+        color: 0x00f2ff,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.85
+      });
+      heroMesh = new THREE.Mesh(geometry, material);
+      heroScene.add(heroMesh);
+
+      // Inner glowing core
+      const coreGeo = new THREE.SphereGeometry(0.8, 16, 16);
+      const coreMat = new THREE.MeshBasicMaterial({
+        color: 0xb026ff,
+        wireframe: false,
+        transparent: true,
+        opacity: 0.3
+      });
+      const coreMesh = new THREE.Mesh(coreGeo, coreMat);
+      heroMesh.add(coreMesh);
+
+      // Drag to rotate interactions
+      let isDragging = false;
+      let prevMousePos = { x: 0, y: 0 };
+
+      container.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        prevMousePos = { x: e.clientX, y: e.clientY };
+      });
+      window.addEventListener('mouseup', () => isDragging = false);
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging || !heroMesh) return;
+        const deltaX = e.clientX - prevMousePos.x;
+        const deltaY = e.clientY - prevMousePos.y;
+        heroMesh.rotation.y += deltaX * 0.01;
+        heroMesh.rotation.x += deltaY * 0.01;
+        prevMousePos = { x: e.clientX, y: e.clientY };
+      });
+
+      // Touch events
+      container.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) {
+          isDragging = true;
+          prevMousePos = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        }
+      });
+      window.addEventListener('touchend', () => isDragging = false);
+      window.addEventListener('touchmove', (e) => {
+        if (!isDragging || !heroMesh || e.touches.length !== 1) return;
+        const deltaX = e.touches[0].clientX - prevMousePos.x;
+        const deltaY = e.touches[0].clientY - prevMousePos.y;
+        heroMesh.rotation.y += deltaX * 0.01;
+        heroMesh.rotation.x += deltaY * 0.01;
+        prevMousePos = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      });
+
+      // Hide loader
+      const loader = document.getElementById('canvasLoader');
+      if (loader) loader.style.display = 'none';
+
+      // Animation Loop
+      function animate() {
+        requestAnimationFrame(animate);
+        if (heroMesh) {
+          heroMesh.rotation.y += 0.005;
+          heroMesh.rotation.x += 0.002;
+        }
+        heroRenderer.render(heroScene, heroCamera);
+      }
+      animate();
+
+      window.addEventListener('resize', () => {
+        if (!container || !heroRenderer || !heroCamera) return;
+        const w = container.clientWidth;
+        const h = container.clientHeight;
+        heroCamera.aspect = w / h;
+        heroCamera.updateProjectionMatrix();
+        heroRenderer.setSize(w, h);
+      });
+    }
+
+    function toggleWireframeHero() {
+      heroWireframe = !heroWireframe;
+      if (heroMesh) {
+        heroMesh.material.wireframe = heroWireframe;
+      }
+      document.getElementById('wireframeHeroStatus').innerText = heroWireframe ? 'ON' : 'OFF';
+    }
+
+    // Modal Hologram Viewer
+    function initModalThreeJS(shapeType) {
+      const canvas = document.getElementById('modalThreeCanvas');
+      if (!canvas) return;
+      const parent = canvas.parentElement;
+      const width = parent.clientWidth;
+      const height = parent.clientHeight;
+
+      if (!modalRenderer) {
+        modalScene = new THREE.Scene();
+        modalCamera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+        modalCamera.position.z = 4.5;
+
+        modalRenderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+        modalRenderer.setSize(width, height);
+        modalRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        // Light
+        const pLight = new THREE.PointLight(0x00f2ff, 2, 50);
+        pLight.position.set(2, 4, 3);
+        modalScene.add(pLight);
+
+        let isDragging = false;
+        let prevMousePos = { x: 0, y: 0 };
+        canvas.addEventListener('mousedown', (e) => {
+          isDragging = true;
+          prevMousePos = { x: e.clientX, y: e.clientY };
+        });
+        window.addEventListener('mouseup', () => isDragging = false);
+        window.addEventListener('mousemove', (e) => {
+          if (!isDragging || !modalMesh) return;
+          modalMesh.rotation.y += (e.clientX - prevMousePos.x) * 0.01;
+          modalMesh.rotation.x += (e.clientY - prevMousePos.y) * 0.01;
+          prevMousePos = { x: e.clientX, y: e.clientY };
+        });
+
+        function animateModal() {
+          requestAnimationFrame(animateModal);
+          if (modalMesh && modalAutoRotate) {
+            modalMesh.rotation.y += 0.01;
+          }
+          modalRenderer.render(modalScene, modalCamera);
+        }
+        animateModal();
+      }
+
+      // Clear previous mesh
+      if (modalMesh) {
+        modalScene.remove(modalMesh);
+      }
+
+      // Generate Geometry dynamically based on item shape
+      let geo;
+      switch (shapeType) {
+        case 'cube': geo = new THREE.BoxGeometry(1.8, 1.8, 1.8); break;
+        case 'torus': geo = new THREE.TorusGeometry(1.2, 0.45, 16, 40); break;
+        case 'cylinder': geo = new THREE.CylinderGeometry(0.8, 0.8, 2, 24); break;
+        case 'octahedron': geo = new THREE.OctahedronGeometry(1.6); break;
+        case 'sphere': geo = new THREE.SphereGeometry(1.4, 32, 32); break;
+        case 'cone': geo = new THREE.ConeGeometry(1.1, 2.2, 24); break;
+        case 'dodecahedron': geo = new THREE.DodecahedronGeometry(1.5); break;
+        default: geo = new THREE.IcosahedronGeometry(1.5, 1);
+      }
+
+      const mat = new THREE.MeshStandardMaterial({
+        color: 0x00f2ff,
+        emissive: 0x072535,
+        wireframe: modalWireframe,
+        roughness: 0.2,
+        metalness: 0.9,
+      });
+
+      modalMesh = new THREE.Mesh(geo, mat);
+      modalScene.add(modalMesh);
+    }
+
+    function toggleModalWireframe() {
+      modalWireframe = !modalWireframe;
+      if (modalMesh) modalMesh.material.wireframe = modalWireframe;
+      document.getElementById('modalWireframeLabel').innerText = modalWireframe ? 'ON' : 'OFF';
+    }
+
+    function toggleModalRotation() {
+      modalAutoRotate = !modalAutoRotate;
+      document.getElementById('modalSpinLabel').innerText = modalAutoRotate ? 'AUTO' : 'PAUSED';
+    }
+
+    /* ==========================================================================
+       3. UI RENDERING & CURRENCY FORMATTING
+       ========================================================================== */
+    function formatPrice(baseCredits) {
+      const cur = CURRENCY_RATES[currentCurrency];
+      const converted = (baseCredits * cur.rate).toLocaleString('en-US', {
+        minimumFractionDigits: cur.precision,
+        maximumFractionDigits: cur.precision
+      });
+      return `${cur.symbol} ${converted}`;
+    }
+
+    function changeCurrency(newCur) {
+      currentCurrency = newCur;
+      renderCatalog();
+      updateCartUI();
+      // Update featured hero price
+      document.getElementById('heroFeaturedPrice').innerText = formatPrice(8450);
+      showToast(`Currency re-calibrated to ${newCur}`);
+    }
+
+    function renderCatalog() {
+      const grid = document.getElementById('productsGrid');
+      const emptyState = document.getElementById('emptyCatalogState');
+      const countDisplay = document.getElementById('itemCountDisplay');
+      if (!grid) return;
+
+      const filtered = PRODUCTS.filter(item => {
+        const matchesCategory = (currentFilter === 'all') || (item.category === currentFilter);
+        const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                              item.desc.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                              item.category.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesSearch;
+      });
+
+      countDisplay.innerText = filtered.length;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+      emptyState.classList.add('hidden');
+
+      grid.innerHTML = filtered.map(item => `
+        <div class="glass-panel rounded-lg border border-cyan-500/20 p-5 flex flex-col justify-between hover-glow group relative">
+          <!-- Top Hologram Tag -->
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-cyan-950/80 text-neonCyan border border-cyan-500/30">
+              ${item.category}
+            </span>
+            <span class="text-[9px] font-mono tracking-widest text-neonViolet font-bold px-1.5 py-0.5 rounded bg-violet-950/40 border border-violet-500/30">
+              ${item.badge}
+            </span>
+          </div>
+
+          <!-- Product Simulation Graphic Box -->
+          <div onclick="openHologramModal('${item.id}')" class="relative w-full h-44 bg-void/90 rounded border border-slate-800 flex items-center justify-center cursor-pointer group-hover:border-cyan-500/50 transition-colors overflow-hidden">
+            <div class="absolute inset-0 scanlines opacity-30"></div>
+            <!-- Dynamic Geometric Icon Representation -->
+            <div class="text-neonCyan group-hover:scale-110 transition-transform duration-300">
+              ${getIconForShape(item.specs.shape)}
+            </div>
+            
+            <span class="absolute bottom-2 left-2 text-[10px] font-mono text-slate-400 group-hover:text-neonCyan flex items-center gap-1 bg-black/70 px-2 py-0.5 rounded">
+              <svg class="w-3 h-3 text-neonCyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              Inspect 3D Wireframe
+            </span>
+          </div>
+
+          <!-- Title & Description -->
+          <div class="mt-4 flex-1">
+            <h3 class="font-orbitron font-bold text-white text-base group-hover:text-neonCyan transition-colors">${item.name}</h3>
+            <p class="text-xs text-slate-400 font-rajdhani mt-1.5 line-clamp-2">${item.desc}</p>
+          </div>
+
+          <!-- Neural Specs Mini Bar -->
+          <div class="grid grid-cols-2 gap-2 my-3 py-2 border-y border-slate-800 font-mono text-[10px]">
+            <div>
+              <span class="text-slate-500 block">LATENCY</span>
+              <span class="text-neonCyan font-bold">${item.specs.latency}</span>
+            </div>
+            <div>
+              <span class="text-slate-500 block">BANDWIDTH</span>
+              <span class="text-slate-300 font-bold">${item.specs.bandwidth}</span>
+            </div>
+          </div>
+
+          <!-- Price & Action -->
+          <div class="flex items-center justify-between pt-2">
+            <div>
+              <span class="text-[10px] font-mono text-slate-500 block">PRICE UNIT</span>
+              <span class="font-mono font-bold text-lg text-white">${formatPrice(item.price)}</span>
+            </div>
+            <button onclick="addToCart('${item.id}')" class="px-3.5 py-2 bg-voidcard border border-cyan-500 text-neonCyan hover:bg-neonCyan hover:text-void font-orbitron font-bold text-xs uppercase tracking-wider rounded transition-all shadow-sm hover:shadow-cyan-glow flex items-center gap-1.5">
+              <span>+ SYNAPSE</span>
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function getIconForShape(shape) {
+      // Inline futuristic vector shapes
+      switch (shape) {
+        case 'cube':
+          return `<svg class="w-16 h-16 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>`;
+        case 'torus':
+          return `<svg class="w-16 h-16 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4"></circle></svg>`;
+        case 'cylinder':
+          return `<svg class="w-16 h-16 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>`;
+        case 'octahedron':
+          return `<svg class="w-16 h-16 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><polygon points="12,2 22,12 12,22 2,12"></polygon><line x1="2" y1="12" x2="22" y2="12"></line><line x1="12" y1="2" x2="12" y2="22"></line></svg>`;
+        case 'sphere':
+          return `<svg class="w-16 h-16 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>`;
+        default:
+          return `<svg class="w-16 h-16 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><polygon points="12 2 19 8.5 19 15.5 12 22 5 15.5 5 8.5 12 2"></polygon></svg>`;
+      }
+    }
+
+    function setFilter(cat) {
+      currentFilter = cat;
+      // Update pills UI
+      document.querySelectorAll('.cat-pill').forEach(pill => {
+        if (pill.innerText.trim().toUpperCase() === cat.toUpperCase() || (cat === 'all' && pill.innerText.trim() === 'ALL')) {
+          pill.className = 'cat-pill active px-3.5 py-1.5 rounded border border-cyan-500 bg-cyan-950/60 text-neonCyan font-bold transition-all';
+        } else {
+          pill.className = 'cat-pill px-3.5 py-1.5 rounded border border-slate-800 bg-voidcard text-slate-400 hover:border-cyan-500 hover:text-white transition-all';
+        }
+      });
+      renderCatalog();
+    }
+
+    function handleSearch(val) {
+      searchQuery = val;
+      renderCatalog();
+    }
+
+    /* ==========================================================================
+       4. MODAL INSPECTION SYSTEM
+       ========================================================================== */
+    function openHologramModal(productId) {
+      const product = PRODUCTS.find(p => p.id === productId);
+      if (!product) return;
+      modalSelectedProduct = product;
+
+      document.getElementById('modalProductTitle').innerText = product.name;
+      document.getElementById('modalCategoryBadge').innerText = product.category;
+      document.getElementById('modalProductPrice').innerText = formatPrice(product.price);
+      document.getElementById('modalProductDesc').innerText = product.desc;
+
+      document.getElementById('modalSpecLatency').innerText = product.specs.latency;
+      document.getElementById('modalSpecBandwidth').innerText = product.specs.bandwidth;
+      document.getElementById('modalSpecPower').innerText = product.specs.power;
+
+      const addBtn = document.getElementById('modalAddToCartBtn');
+      addBtn.onclick = () => {
+        addToCart(product.id);
+        closeHologramModal();
+      };
+
+      document.getElementById('hologramModal').classList.remove('hidden');
+
+      // Initialize 3D renderer for this product shape
+      setTimeout(() => {
+        initModalThreeJS(product.specs.shape);
+      }, 50);
+    }
+
+    function closeHologramModal() {
+      document.getElementById('hologramModal').classList.add('hidden');
+    }
+
+    /* ==========================================================================
+       5. CART & BIOMETRIC CHECKOUT PIPELINE
+       ========================================================================== */
+    function addToCart(productId) {
+      const product = PRODUCTS.find(p => p.id === productId);
+      if (!product) return;
+
+      const existing = cart.find(item => item.id === productId);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ ...product, quantity: 1 });
+      }
+
+      updateCartUI();
+      showToast(`Added [${product.name}] to Synapse Cart`);
+    }
+
+    function quickAddFeaturedHero() {
+      addToCart('CORE-09');
+    }
+
+    function changeCartItemQty(productId, delta) {
+      const index = cart.findIndex(item => item.id === productId);
+      if (index === -1) return;
+
+      cart[index].quantity += delta;
+      if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+      }
+      updateCartUI();
+    }
+
+    function toggleCartDrawer(open) {
+      const drawer = document.getElementById('cartDrawer');
+      if (open) {
+        drawer.classList.remove('translate-x-full');
+      } else {
+        drawer.classList.add('translate-x-full');
+      }
+    }
+
+    function updateCartUI() {
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      document.getElementById('cartCountBadge').innerText = totalItems;
+
+      const cartList = document.getElementById('cartItemsList');
+      if (cart.length === 0) {
+        cartList.innerHTML = `
+          <div class="h-full flex flex-col items-center justify-center text-center text-slate-500 py-16">
+            <svg class="w-12 h-12 mb-2 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+            <p class="font-mono text-sm">CART MATRIX EMPTY</p>
+            <p class="text-xs text-slate-600 mt-1">No cybernetic implants mapped to current session.</p>
+          </div>
+        `;
+      } else {
+        cartList.innerHTML = cart.map(item => `
+          <div class="flex items-center justify-between bg-void p-3 rounded border border-slate-800 text-xs">
+            <div class="flex-1 pr-2">
+              <h4 class="font-orbitron font-bold text-white text-xs">${item.name}</h4>
+              <p class="font-mono text-neonCyan mt-0.5">${formatPrice(item.price)}</p>
+            </div>
+            
+            <div class="flex items-center gap-2 font-mono">
+              <button onclick="changeCartItemQty('${item.id}', -1)" class="w-6 h-6 rounded bg-slate-900 border border-slate-700 text-slate-300 hover:border-neonCyan hover:text-white flex items-center justify-center">-</button>
+              <span class="w-4 text-center font-bold text-white">${item.quantity}</span>
+              <button onclick="changeCartItemQty('${item.id}', 1)" class="w-6 h-6 rounded bg-slate-900 border border-slate-700 text-slate-300 hover:border-neonCyan hover:text-white flex items-center justify-center">+</button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Calculations
+      const subtotalCredits = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      const taxCredits = subtotalCredits * 0.04;
+      const totalCredits = subtotalCredits + taxCredits;
+
+      document.getElementById('cartSubtotalText').innerText = formatPrice(subtotalCredits);
+      document.getElementById('cartTaxText').innerText = formatPrice(taxCredits);
+      document.getElementById('cartTotalText').innerText = formatPrice(totalCredits);
+    }
+
+    // Biometric Retinal Checkout Flow
+    function initiateBiometricCheckout() {
+      if (cart.length === 0) {
+        showToast('Cart matrix is empty. Add hardware first.');
+        return;
+      }
+      toggleCartDrawer(false);
+      
+      const modal = document.getElementById('checkoutModal');
+      const progressBar = document.getElementById('checkoutProgressBar');
+      const title = document.getElementById('checkoutStateTitle');
+      const desc = document.getElementById('checkoutStateDesc');
+      const log = document.getElementById('checkoutTelemetryLog');
+      const actions = document.getElementById('checkoutSuccessActions');
+
+      modal.classList.remove('hidden');
+      progressBar.style.width = '0%';
+      actions.classList.add('hidden');
+      title.innerText = 'SYNAPSE BIOMETRIC AUTH';
+      desc.innerText = 'ALIGNING OPTIC RETINA WITH QUANTUM NODE...';
+      log.innerHTML = `<div>&gt; Establishing encrypted orbital stream...</div>`;
+
+      // Multi-phase simulated scan
+      let step = 0;
+      const steps = [
+        { pct: '25%', msg: '&gt; Retinal iris frequency matched: ID 0x892A-CYBER', delay: 800 },
+        { pct: '60%', msg: '&gt; Quantum signature verified with Syndicate Reserve.', delay: 1600 },
+        { pct: '90%', msg: '&gt; Reallocating credit ledger from sector balance...', delay: 2400 },
+        { pct: '100%', msg: '&gt; TRANSACTION COMPLETED. Delivery drop-pod dispatched.', delay: 3200 }
+      ];
+
+      steps.forEach(s => {
+        setTimeout(() => {
+          progressBar.style.width = s.pct;
+          const line = document.createElement('div');
+          line.innerHTML = s.msg;
+          log.appendChild(line);
+          log.scrollTop = log.scrollHeight;
+
+          if (s.pct === '100%') {
+            title.innerText = 'AUTHENTICATION GRANTED';
+            title.classList.add('text-neonGreen');
+            desc.innerText = 'HARDWARE SECURED VIA QUANTUM CONTRACT #9940';
+            actions.classList.remove('hidden');
+            cart = [];
+            updateCartUI();
+          }
+        }, s.delay);
+      });
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkoutModal').classList.add('hidden');
+    }
+
+    /* ==========================================================================
+       6. AI CONCIERGE ('AURA') INTERACTIVE DIALOGUE
+       ========================================================================== */
+    function toggleAuraChat() {
+      const box = document.getElementById('auraChatBox');
+      box.classList.toggle('hidden');
+    }
+
+    function submitAuraMessage() {
+      const input = document.getElementById('auraInput');
+      const txt = input.value.trim();
+      if (!txt) return;
+      askAura(txt);
+      input.value = '';
+    }
+
+    function askAura(queryText) {
+      const messagesContainer = document.getElementById('auraMessages');
+      
+      // User message
+      const userDiv = document.createElement('div');
+      userDiv.className = 'p-2 bg-cyan-950/40 rounded border border-cyan-800/40 text-cyan-200 text-right';
+      userDiv.innerHTML = `<strong class="text-white">YOU:</strong> ${queryText}`;
+      messagesContainer.appendChild(userDiv);
+
+      // AI Response generation
+      setTimeout(() => {
+        let answer = "Query processed against our neural archives.";
+        const q = queryText.toLowerCase();
+
+        if (q.includes('latency')) {
+          answer = "For ultra-low latency, inspect the 'Synapse Ghost Link IV' (0.04 ms) or 'Ocular-9 Holographic Retina' (0.01 ms). Zero cerebral lag guaranteed.";
+        } else if (q.includes('combat') || q.includes('tactical')) {
+          answer = "Optimal loadout: 'Phantom Nanite Infiltration Suit' for active camouflage paired with the 'Hyperion Plasma Scatter Pistol'.";
+        } else if (q.includes('checkout') || q.includes('pay') || q.includes('safe')) {
+          answer = "Biometric Retinal Checkout executes via an unhackable 512-bit quantum ledger with autonomous nanite verification.";
+        } else if (q.includes('hello') || q.includes('hi')) {
+          answer = "Salutations. Which biological deficiency would you like to upgrade today?";
+        } else {
+          answer = "Telemetry noted. All our neural wetware and cybernetics are certified by the Sector 07 Syndicate with a 50 solar cycle guarantee.";
+        }
+
+        const auraDiv = document.createElement('div');
+        auraDiv.className = 'p-2 bg-void rounded border border-slate-800 text-slate-300';
+        auraDiv.innerHTML = `<strong class="text-neonCyan">AURA:</strong> ${answer}`;
+        messagesContainer.appendChild(auraDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      }, 400);
+
+      const box = document.getElementById('auraChatBox');
+      box.classList.remove('hidden');
+    }
+
+    /* ==========================================================================
+       7. UTILITY & TOAST NOTIFICATIONS
+       ========================================================================== */
+    function showToast(message) {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = 'glass-panel border-l-4 border-neonCyan px-4 py-3 rounded shadow-cyan-glow text-xs font-mono text-white flex items-center gap-2 transform transition-all duration-300 translate-y-2 opacity-0 pointer-events-auto';
+      toast.innerHTML = `
+        <span class="w-2 h-2 rounded-full bg-neonCyan"></span>
+        <span>${message}</span>
+      `;
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+      }, 50);
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+
+    function simulateSubscribe() {
+      showToast('Sub-Ether Neural Feed Linked. Frequency Encrypted.');
+    }
+
+    // Dynamic latency simulator in top bar
+    setInterval(() => {
+      const ping = document.getElementById('pingValue');
+      if (ping) {
+        ping.innerText = Math.floor(9 + Math.random() * 6);
+      }
+    }, 4000);
+
+    /* ==========================================================================
+       8. INITIALIZATION ON WINDOW LOAD
+       ========================================================================== */
+    window.onload = function() {
+      renderCatalog();
+      updateCartUI();
+      initHeroThreeJS();
+    };
+  </script>
+</body>
+</html>rbitron', 'sans-serif'],
+            rajdhani: ['Rajdhani', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          boxShadow: {
+            'cyan-glow': '0 0 25px -5px rgba(0, 242, 255, 0.4)',
+            'violet-glow': '0 0 25px -5px rgba(176, 38, 255, 0.4)',
+            'amber-glow': '0 0 25px -5px rgba(255, 170, 0, 0.4)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Scanlines effect */
+    .scanlines {
+      background: linear-gradient(
+        rgba(18, 16, 16, 0) 50<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVA // CYBERMARKET — Year 2142 Spec Hardware</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Three.js for 3D Hologram Viewer -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            void: '#07080d',
+            voidcard: '#0d101b',
+            neonCyan: '#00f2ff',
+            neonViolet: '#b026ff',
+            neonAmber: '#ffaa00',
+            neonGreen: '#00ff66',
+          },
+          fontFamily: {
+            orbitron: ['O%, 
+        rgba(0, 0, 0, 0.25) 50%
+      ), linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 0.03),
+        rgba(0, 255, 0, 0.01),
+        rgba(0, 0, 255, 0.03)
+      );
+      background-size: 100% 3px, 6px 100%;
+      pointer-events: none;
+    }
+
+    /* Cyber grid overlay */
+    .cyber-grid {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(0, 242, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #07080d;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1a2238;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00f2ff;
+    }
+
+    /* Glass blur effect */
+    .glass-panel {
+      background: rgba(13, 16, 27, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(0, 242, 255, 0.15);
+    }
+
+    /* Neon border animations */
+    .hover-glow {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .hover-glow:hover {
+      border-color: rgba(0, 242, 255, 0.6);
+      box-shadow: 0 0 20px rgba(0, 242, 255, 0.25);
+      transform: translateY(-2px);
+    }
+
+    /* Retinal scanner animation */
+    @keyframes scanline-bar {
+      0% { top: 0%; opacity: 0.8; }
+      50% { opacity: 1; }
+      100% { top: 96%; opacity: 0.8; }
+    }
+    .scanner-line {
+      animation: scanline-bar 1.5s ease-in-out infinite alternate;
+    }
+  </style>
+</head>
+<body class="bg-void text-slate-200 font-rajdhani selection:bg-neonCyan selection:text-black overflow-x-hidden relative min-h-screen">
+
+  <!-- Scanlines overlay for futuristic CRT feel -->
+  <div class="fixed inset-0 scanlines z-40 pointer-events-none opacity-40"></div>
+  
+  <!-- Subtle Grid BG -->
+  <div class="fixed inset-0 cyber-grid z-0 pointer-events-none opacity-70"></div>
+
+  <!-- Top Status Bar -->
+  <div class="relative z-30 border-b border-cyan-500/20 bg-void/90 text-[11px] font-mono tracking-widest text-cyan-400/80 px-4 py-1.5 flex justify-between items-center">
+    <div class="flex items-center space-x-4">
+      <span class="inline-flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-neonGreen animate-ping"></span>
+        <span class="w-2 h-2 rounded-full bg-neonGreen absolute"></span>
+        SYNAPSE NETWORK: <strong class="text-neonGreen">ONLINE (v8.94)</strong>
+      </span>
+      <span class="hidden md:inline text-slate-500">|</span>
+      <span class="hidden md:inline text-slate-400">NODE LATENCY: <span id="pingValue" class="text-cyan-300">12</span> ms</span>
+    </div>
+    <div class="flex items-center space-x-3">
+      <span>QUANTUM SECURITY LAYER: ACTIVE</span>
+      <span class="hidden sm:inline bg-cyan-950/80 border border-cyan-500/30 text-neonCyan px-2 py-0.5 rounded text-[10px]">SECTOR 07</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-30 glass-panel border-b border-cyan-500/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="relative w-10 h-10 border border-neonCyan flex items-center justify-center rounded-sm bg-cyan-950/30 group-hover:shadow-cyan-glow transition-all">
+          <span class="font-orbitron font-black text-neonCyan text-xl">N</span>
+          <div class="absolute -top-1 -right-1 w-2 h-2 bg-neonViolet"></div>
+          <div class="absolute -bottom-1 -left-1 w-2 h-2 bg-neonCyan"></div>
+        </div>
+        <div>
+          <span class="font-orbitron font-black tracking-widest text-xl text-white block leading-none">NOVA<span class="text-neonCyan">//</span>CYBER</span>
+          <span class="font-mono text-[9px] tracking-widest text-neonViolet font-bold uppercase">Synthetics & Tech</span>
+        </div>
+      </a>
+
+      <!-- Quick Category Nav (Desktop) -->
+      <nav class="hidden lg:flex items-center space-x-6 text-sm font-semibold tracking-wider font-orbitron">
+        <button onclick="setFilter('all')" class="nav-item text-slate-300 hover:text-neonCyan transition-colors">ALL GEAR</button>
+        <button onclick="setFilter('Cybernetics')" class="nav-item text-slate-400 hover:text-neonCyan transition-colors">CYBERNETICS</button>
+        <button onclick="setFilter('Neural Implants')" class="nav-item text-slate-400 hover:text-neonCyan transition-colors">NEURAL LINK</button>
+        <button onclick="setFilter('Quantum Hardware')" class="nav-item text-slate-400 hover:text-neonCyan transition-colors">QUANTUM CORES</button>
+        <button onclick="setFilter('Exosuits')" class="nav-item text-slate-400 hover:text-neonCyan transition-colors">EXOSUITS</button>
+      </nav>
+
+      <!-- Currency Switcher & Actions -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        <!-- Currency Select -->
+        <div class="relative">
+          <select id="currencySelector" onchange="changeCurrency(this.value)" class="bg-voidcard/90 border border-cyan-500/30 rounded px-2.5 py-1 text-xs font-mono text-neonCyan focus:outline-none focus:border-neonCyan transition-colors cursor-pointer">
+            <option value="CREDITS">₢ Credits</option>
+            <option value="NEO_ETH">Ξ Neo-ETH</option>
+            <option value="SOL_PRIME">◎ SOL-Prime</option>
+          </select>
+        </div>
+
+        <!-- Cart Button -->
+        <button id="cartBtn" onclick="toggleCartDrawer(true)" class="relative p-2.5 bg-voidcard border border-cyan-500/40 rounded-sm hover:border-neonCyan hover:shadow-cyan-glow transition-all flex items-center justify-center group" aria-label="Open Cart">
+          <svg class="w-5 h-5 text-neonCyan group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span id="cartCountBadge" class="absolute -top-1.5 -right-1.5 bg-neonViolet text-white font-mono text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border border-void">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-12 pb-16 md:pt-20 md:pb-24 border-b border-cyan-500/20 overflow-hidden">
+    <!-- Ambient backlights -->
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-neonCyan/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 right-1/4 w-96 h-96 bg-neonViolet/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Hero Text -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-cyan-950/40 border border-cyan-500/40 rounded-full text-neonCyan font-mono text-xs tracking-wider">
+            <span class="w-1.5 h-1.5 bg-neonCyan rounded-full animate-pulse"></span>
+            NEXT-GEN AUGMENTATION PROTOCOL [2142]
+          </div>
+          
+          <h1 class="text-4xl sm:text-6xl font-black font-orbitron tracking-tight leading-tight text-white uppercase">
+            Transcend <br class="hidden sm:inline" />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-neonCyan via-indigo-300 to-neonViolet">
+              Organic Limits
+            </span>
+          </h1>
+
+          <p class="text-slate-400 font-rajdhani text-lg sm:text-xl max-w-xl mx-auto lg:mx-0">
+            Official distributor of military-grade wetware, sub-atomic quantum processing units, and neural combat implants verified by the Neo-Tokyo Syndicate.
+          </p>
+
+          <!-- Search & Filter Quick Bar -->
+          <div class="pt-2 flex flex-col sm:flex-row gap-3 max-w-lg mx-auto lg:mx-0">
+            <div class="relative flex-grow">
+              <span class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-slate-500">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+              </span>
+              <input type="text" id="searchInput" oninput="handleSearch(this.value)" placeholder="Search wetware, implants, cores..." class="w-full bg-voidcard/90 border border-cyan-500/30 rounded pl-10 pr-4 py-2.5 text-sm font-mono text-white placeholder-slate-500 focus:outline-none focus:border-neonCyan focus:shadow-cyan-glow transition-all" />
+            </div>
+            <a href="#marketCatalog" class="px-6 py-2.5 bg-neonCyan text-void font-orbitron font-bold text-sm tracking-wider uppercase rounded hover:bg-white hover:shadow-cyan-glow transition-all flex items-center justify-center gap-2">
+              Browse Grid
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </a>
+          </div>
+
+          <!-- Mini stats ticker -->
+          <div class="grid grid-cols-3 gap-3 pt-6 border-t border-slate-800 max-w-md mx-auto lg:mx-0 font-mono text-xs">
+            <div>
+              <p class="text-slate-500">NEURAL SYNC</p>
+              <p class="text-neonCyan font-bold text-sm">99.982%</p>
+            </div>
+            <div>
+              <p class="text-slate-500">SECURITY</p>
+              <p class="text-neonViolet font-bold text-sm">MIL-SPEC 6</p>
+            </div>
+            <div>
+              <p class="text-slate-500">WARRANTY</p>
+              <p class="text-neonAmber font-bold text-sm">50 SOLAR CYCLES</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured 3D Hologram Preview Hero Box -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative glass-panel rounded-lg p-5 border border-cyan-500/30 overflow-hidden shadow-2xl">
+            <!-- Corner decoration -->
+            <div class="absolute top-0 right-0 border-t-2 border-r-2 border-neonCyan w-4 h-4"></div>
+            <div class="absolute bottom-0 left-0 border-b-2 border-l-2 border-neonViolet w-4 h-4"></div>
+
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-xs font-mono text-slate-400">
+              <span class="flex items-center gap-1.5 text-neonCyan">
+                <span class="w-2 h-2 rounded-full bg-neonCyan animate-ping"></span>
+                HOLOGRAM SIMULATOR
+              </span>
+              <span class="text-[10px] text-slate-500">LIVE RENDER V1.4</span>
+            </div>
+
+            <!-- Canvas Container -->
+            <div id="heroCanvasContainer" class="relative w-full h-72 sm:h-80 bg-void/80 rounded flex items-center justify-center my-3 cursor-grab active:cursor-grabbing border border-cyan-900/40">
+              <div id="canvasLoader" class="text-xs font-mono text-slate-500 animate-pulse">SYNTHESIZING MATRIX...</div>
+              <canvas id="heroThreeCanvas" class="w-full h-full"></canvas>
+              
+              <!-- Viewer Controls floating overlay -->
+              <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono pointer-events-none">
+                <span class="bg-black/70 px-2 py-1 rounded text-slate-300 border border-slate-800 pointer-events-auto">Drag to rotate</span>
+                <button onclick="toggleWireframeHero()" class="bg-cyan-950/80 px-2 py-1 rounded text-neonCyan border border-cyan-500/40 hover:bg-cyan-900 pointer-events-auto transition-colors">
+                  Wireframe: <span id="wireframeHeroStatus">ON</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex justify-between items-center font-orbitron">
+                <h3 id="heroFeaturedTitle" class="text-base font-bold text-white tracking-wide">CHRONOS QUANTUM CORE-9</h3>
+                <span id="heroFeaturedPrice" class="text-neonCyan font-mono font-bold">₢ 8,450</span>
+              </div>
+              <p class="text-xs text-slate-400 font-rajdhani line-clamp-2">
+                Nanite-infused overclocked multi-state quantum compute engine for neural synchronization and temporal computation.
+              </p>
+              <button onclick="quickAddFeaturedHero()" class="w-full py-2 bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-500 hover:to-cyan-400 text-void font-orbitron font-bold text-xs uppercase tracking-wider rounded transition-all shadow-cyan-glow flex items-center justify-center gap-2 mt-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                Insta-Acquire Unit
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter & Catalog Section -->
+  <main id="marketCatalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    
+    <!-- Controls Bar -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pb-8 border-b border-cyan-500/20">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-black font-orbitron tracking-wide text-white uppercase flex items-center gap-2">
+          <span class="w-2 h-6 bg-neonCyan inline-block"></span>
+          Hardware Vault
+        </h2>
+        <p class="text-xs sm:text-sm font-mono text-slate-400 mt-1">Showing <span id="itemCountDisplay" class="text-neonCyan">0</span> verified cybernetic artefacts</p>
+      </div>
+
+      <!-- Categories Pills -->
+      <div class="flex flex-wrap gap-2 text-xs font-mono">
+        <button onclick="setFilter('all')" class="cat-pill active px-3.5 py-1.5 rounded border border-cyan-500 bg-cyan-950/60 text-neonCyan font-bold transition-all">ALL</button>
+        <button onclick="setFilter('Cybernetics')" class="cat-pill px-3.5 py-1.5 rounded border border-slate-800 bg-voidcard text-slate-400 hover:border-cyan-500 hover:text-white transition-all">CYBERNETICS</button>
+        <button onclick="setFilter('Neural Implants')" class="cat-pill px-3.5 py-1.5 rounded border border-slate-800 bg-voidcard text-slate-400 hover:border-cyan-500 hover:text-white transition-all">NEURAL IMPLANTS</button>
+        <button onclick="setFilter('Quantum Hardware')" class="cat-pill px-3.5 py-1.5 rounded border border-slate-800 bg-voidcard text-slate-400 hover:border-cyan-500 hover:text-white transition-all">QUANTUM HARDWARE</button>
+        <button onclick="setFilter('Exosuits')" class="cat-pill px-3.5 py-1.5 rounded border border-slate-800 bg-voidcard text-slate-400 hover:border-cyan-500 hover:text-white transition-all">EXOSUITS</button>
+        <button onclick="setFilter('Energy Weapons')" class="cat-pill px-3.5 py-1.5 rounded border border-slate-800 bg-voidcard text-slate-400 hover:border-cyan-500 hover:text-white transition-all">ENERGY WEAPONS</button>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pt-8">
+      <!-- Dynamic cards rendered by JS -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="emptyCatalogState" class="hidden text-center py-20">
+      <div class="w-16 h-16 mx-auto mb-4 border border-dashed border-neonCyan/40 rounded-full flex items-center justify-center text-neonCyan">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      </div>
+      <h3 class="font-orbitron text-xl text-white">NO CIPHER MATCH FOUND</h3>
+      <p class="font-mono text-sm text-slate-400 mt-2">Adjust your query or recalibrate sensor parameters.</p>
+      <button onclick="setFilter('all'); document.getElementById('searchInput').value = ''; handleSearch('');" class="mt-4 px-4 py-2 border border-neonCyan text-neonCyan text-xs font-mono uppercase hover:bg-neonCyan/20 rounded">Reset Database Filters</button>
+    </div>
+  </main>
+
+  <!-- Interactive 3D Hologram Inspection Modal -->
+  <div id="hologramModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="relative w-full max-w-4xl glass-panel rounded-lg border border-cyan-500/40 p-6 overflow-hidden shadow-cyan-glow">
+      
+      <!-- Close button -->
+      <button onclick="closeHologramModal()" class="absolute top-4 right-4 text-slate-400 hover:text-neonCyan p-1 rounded transition-colors" aria-label="Close modal">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+        <!-- 3D Canvas Box -->
+        <div class="md:col-span-7 relative h-80 sm:h-96 bg-void/90 rounded border border-cyan-500/30 overflow-hidden flex items-center justify-center">
+          <canvas id="modalThreeCanvas" class="w-full h-full cursor-grab active:cursor-grabbing"></canvas>
+          
+          <!-- Scanline overlay for modal viewer -->
+          <div class="absolute inset-0 scanlines pointer-events-none opacity-20"></div>
+
+          <!-- Quick Canvas Switchers -->
+          <div class="absolute bottom-3 left-3 flex gap-2 text-[10px] font-mono">
+            <button onclick="toggleModalWireframe()" class="px-2 py-1 rounded bg-black/80 border border-cyan-500/40 text-neonCyan hover:bg-cyan-950 transition-colors">
+              Wireframe: <span id="modalWireframeLabel">OFF</span>
+            </button>
+            <button onclick="toggleModalRotation()" class="px-2 py-1 rounded bg-black/80 border border-slate-700 text-slate-300 hover:text-white transition-colors">
+              Spin: <span id="modalSpinLabel">AUTO</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Spec Data & Purchase -->
+        <div class="md:col-span-5 space-y-4">
+          <div class="border-b border-slate-800 pb-3">
+            <span id="modalCategoryBadge" class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950 text-neonCyan border border-cyan-800">CATEGORY</span>
+            <h3 id="modalProductTitle" class="text-xl sm:text-2xl font-black font-orbitron text-white mt-1">PRODUCT SPEC</h3>
+            <p id="modalProductPrice" class="text-lg font-mono font-bold text-neonCyan">₢ 0.00</p>
+          </div>
+
+          <p id="modalProductDesc" class="text-sm text-slate-300 font-rajdhani leading-relaxed"></p>
+
+          <!-- Neural Spec Matrix -->
+          <div class="space-y-2 bg-voidcard/60 p-3 rounded border border-slate-800 text-xs font-mono">
+            <div class="text-[10px] text-neonViolet font-bold uppercase tracking-wider">Neural Telemetry Spec</div>
+            <div class="flex justify-between py-1 border-b border-slate-800/80">
+              <span class="text-slate-400">Synaptic Latency</span>
+              <span id="modalSpecLatency" class="text-neonCyan font-semibold">&lt; 0.4ms</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-slate-800/80">
+              <span class="text-slate-400">Bandwidth Density</span>
+              <span id="modalSpecBandwidth" class="text-slate-200 font-semibold">12.8 TB/s</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-slate-800/80">
+              <span class="text-slate-400">Quantum Battery</span>
+              <span id="modalSpecPower" class="text-neonAmber font-semibold">96.4 hrs</span>
+            </div>
+            <div class="flex justify-between py-1">
+              <span class="text-slate-400">Nanite Integrity</span>
+              <span class="text-neonGreen font-semibold">100% Autonomous</span>
+            </div>
+          </div>
+
+          <button id="modalAddToCartBtn" class="w-full py-3 bg-neonCyan hover:bg-white text-void font-orbitron font-bold text-sm tracking-wider uppercase rounded transition-all shadow-cyan-glow flex items-center justify-center gap-2">
+            Add to Neural Synapse Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div id="cartDrawer" class="fixed inset-y-0 right-0 w-full max-w-md bg-voidcard/95 backdrop-blur-xl border-l border-cyan-500/30 z-50 transform translate-x-full transition-transform duration-300 flex flex-col shadow-2xl">
+    
+    <!-- Drawer Header -->
+    <div class="p-5 border-b border-cyan-500/20 flex items-center justify-between">
+      <div class="flex items-center gap-2 font-orbitron">
+        <span class="w-3 h-3 bg-neonCyan rounded-sm rotate-45"></span>
+        <h3 class="text-lg font-bold text-white tracking-wider">QUANTUM SYNC CART</h3>
+      </div>
+      <button onclick="toggleCartDrawer(false)" class="text-slate-400 hover:text-white p-1 rounded" aria-label="Close cart drawer">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <!-- Items List -->
+    <div id="cartItemsList" class="flex-1 overflow-y-auto p-5 space-y-4">
+      <!-- Items dynamically populated -->
+    </div>
+
+    <!-- Drawer Footer -->
+    <div class="p-5 border-t border-cyan-500/20 bg-void/90 space-y-3 font-mono">
+      <div class="flex justify-between text-xs text-slate-400">
+        <span>Subtotal</span>
+        <span id="cartSubtotalText">₢ 0.00</span>
+      </div>
+      <div class="flex justify-between text-xs text-slate-400">
+        <span>Syndicate Tariff (4%)</span>
+        <span id="cartTaxText">₢ 0.00</span>
+      </div>
+      <div class="flex justify-between text-base font-bold text-neonCyan pt-2 border-t border-slate-800">
+        <span class="font-orbitron">TOTAL ESTIMATE</span>
+        <span id="cartTotalText">₢ 0.00</span>
+      </div>
+
+      <button id="checkoutBtn" onclick="initiateBiometricCheckout()" class="w-full py-3.5 bg-gradient-to-r from-neonCyan via-cyan-400 to-neonViolet text-void font-orbitron font-extrabold text-sm tracking-wider uppercase rounded transition-all shadow-cyan-glow hover:brightness-110 active:scale-95 flex items-center justify-center gap-2 mt-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+        Biometric Checkout
+      </button>
+
+      <p class="text-[10px] text-center text-slate-500 pt-1">SECURED BY 512-BIT QUANTUM HASH</p>
+    </div>
+  </div>
+
+  <!-- Retinal / Biometric Checkout Simulation Modal -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-lg hidden flex items-center justify-center p-4">
+    <div class="relative w-full max-w-md glass-panel rounded-lg border border-neonCyan/50 p-6 text-center overflow-hidden shadow-cyan-glow">
+      
+      <!-- Scan Reticle -->
+      <div class="relative w-36 h-36 mx-auto my-4 border-2 border-neonCyan/60 rounded-full flex items-center justify-center overflow-hidden bg-cyan-950/20">
+        <!-- Circular crosshair -->
+        <div class="absolute inset-2 border border-dashed border-neonViolet/50 rounded-full"></div>
+        <div class="w-16 h-16 rounded-full border border-neonCyan flex items-center justify-center">
+          <svg class="w-8 h-8 text-neonCyan animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+        </div>
+        
+        <!-- Laser Scanner Bar -->
+        <div class="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-neonCyan to-transparent scanner-line"></div>
+      </div>
+
+      <div class="space-y-2">
+        <h3 id="checkoutStateTitle" class="text-xl font-bold font-orbitron text-white uppercase">SYNAPSE BIOMETRIC AUTH</h3>
+        <p id="checkoutStateDesc" class="text-xs font-mono text-cyan-400">ALIGNING OPTIC RETINA WITH QUANTUM NODE...</p>
+      </div>
+
+      <!-- Simulated Progress Meter -->
+      <div class="w-full bg-slate-900 rounded-full h-2 my-5 overflow-hidden border border-cyan-900">
+        <div id="checkoutProgressBar" class="bg-gradient-to-r from-neonCyan to-neonViolet h-full w-0 transition-all duration-300"></div>
+      </div>
+
+      <div id="checkoutTelemetryLog" class="text-[11px] font-mono text-slate-400 bg-void/80 p-2.5 rounded border border-slate-800 text-left h-20 overflow-y-auto space-y-1">
+        <div>&gt; Initiating handshake with Satellite Hub-09...</div>
+      </div>
+
+      <div id="checkoutSuccessActions" class="hidden mt-6">
+        <button onclick="closeCheckoutModal()" class="w-full py-2.5 bg-neonGreen text-black font-orbitron font-bold text-xs uppercase rounded hover:bg-white transition-all shadow-lg">
+          Acknowledge & Close Transmission
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating AI Assistant ('AURA') Widget -->
+  <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end">
+    
+    <!-- AI Dialogue Bubble -->
+    <div id="auraChatBox" class="hidden w-80 sm:w-96 glass-panel rounded-lg border border-neonCyan/40 p-4 mb-3 shadow-cyan-glow flex flex-col space-y-3">
+      <div class="flex items-center justify-between pb-2 border-b border-slate-800">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-neonCyan animate-ping"></span>
+          <span class="font-orbitron font-bold text-xs text-white">AURA // SYNTHESIS AI</span>
+        </div>
+        <span class="text-[10px] font-mono text-neonCyan bg-cyan-950/80 px-1.5 py-0.5 rounded">ONLINE</span>
+      </div>
+
+      <!-- Dialogue history -->
+      <div id="auraMessages" class="max-h-56 overflow-y-auto text-xs font-mono space-y-2 pr-1">
+        <div class="p-2 bg-void rounded border border-slate-800 text-slate-300">
+          <strong class="text-neonCyan">AURA:</strong> Greetings, organic entity. I can recommend optimal wetware, check quantum core compatibility, or clarify synaptic latency ratings.
+        </div>
+      </div>
+
+      <!-- Quick prompts -->
+      <div class="flex flex-wrap gap-1.5 pt-1">
+        <button onclick="askAura('Which implant has lowest latency?')" class="text-[10px] font-mono bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 px-2 py-1 rounded hover:bg-cyan-900 transition-colors">Lowest latency?</button>
+        <button onclick="askAura('Best gear for tactical combat?')" class="text-[10px] font-mono bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 px-2 py-1 rounded hover:bg-cyan-900 transition-colors">Tactical gear?</button>
+        <button onclick="askAura('How does quantum sync checkout work?')" class="text-[10px] font-mono bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 px-2 py-1 rounded hover:bg-cyan-900 transition-colors">Payment safety?</button>
+      </div>
+
+      <!-- Text Input -->
+      <div class="flex gap-2">
+        <input type="text" id="auraInput" onkeydown="if(event.key==='Enter') submitAuraMessage()" placeholder="Inquire with AURA..." class="flex-1 bg-void border border-slate-800 rounded px-2.5 py-1.5 text-xs text-white font-mono focus:outline-none focus:border-neonCyan" />
+        <button onclick="submitAuraMessage()" class="px-3 bg-neonCyan text-void font-bold text-xs rounded hover:bg-white transition-colors">
+          SEND
+        </button>
+      </div>
+    </div>
+
+    <!-- Toggle Button -->
+    <button onclick="toggleAuraChat()" class="relative group p-3.5 bg-voidcard border border-neonCyan rounded-full shadow-cyan-glow hover:scale-105 transition-all flex items-center justify-center">
+      <svg class="w-6 h-6 text-neonCyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+      <span class="absolute -top-1 -right-1 w-3 h-3 bg-neonViolet rounded-full border-2 border-void animate-pulse"></span>
+    </button>
+  </div>
+
+  <!-- Cyberpunk Footer -->
+  <footer class="border-t border-cyan-500/20 bg-void/90 relative z-20 mt-16 font-mono text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div class="space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="font-orbitron font-bold text-white text-base">NOVA<span class="text-neonCyan">//</span>CYBER</span>
+          </div>
+          <p class="text-slate-500 text-xs">Pioneering synthetic evolution across the outer colonies since 2088. Fully compliant with Megacity 4 Bio-Standards.</p>
+        </div>
+
+        <div>
+          <h4 class="font-orbitron text-white font-semibold mb-3">SECTORS</h4>
+          <ul class="space-y-2 text-slate-400">
+            <li><a href="#" class="hover:text-neonCyan">Sector 01: Core Systems</a></li>
+            <li><a href="#" class="hover:text-neonCyan">Sector 04: Wetware Labs</a></li>
+            <li><a href="#" class="hover:text-neonCyan">Sector 09: Orbital Yard</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-orbitron text-white font-semibold mb-3">SECURITY PROTOCOLS</h4>
+          <ul class="space-y-2 text-slate-400">
+            <li>Neural Hash Verification</li>
+            <li>Zero-Trace Memory Flush</li>
+            <li>Mil-Spec RMA Guarantee</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-orbitron text-white font-semibold mb-3">QUANTUM DISPATCH</h4>
+          <p class="text-slate-500 mb-2">Subscribe to sub-ether drops & classified prototypes.</p>
+          <div class="flex">
+            <input type="email" placeholder="neural-id@domain.neo" class="bg-voidcard border border-slate-800 rounded-l px-3 py-1.5 text-xs text-white focus:outline-none focus:border-neonCyan w-full" />
+            <button onclick="simulateSubscribe()" class="bg-neonCyan text-void font-bold px-3 py-1.5 rounded-r hover:bg-white transition-colors">LINK</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between text-slate-500 text-[11px]">
+        <div>© 2142 NOVA CYBERMARKET INC. ALL QUANTUM THREADS RESERVED.</div>
+        <div class="mt-2 sm:mt-0 flex gap-4">
+          <span>LATENCY: 12ms</span>
+          <span>ENCRYPTION: AES-QUANTUM-4096</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Notification Toast Container -->
+  <div id="toastContainer" class="fixed top-6 right-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- APPLICATION LOGIC SCRIPT -->
+  <script>
+    /* ==========================================================================
+       1. DATA DEFINITIONS & DATABASE
+       ========================================================================== */
+    const PRODUCTS = [
+      {
+        id: 'CORE-09',
+        name: 'Chronos Quantum Core-9',
+        category: 'Quantum Hardware',
+        price: 8450,
+        badge: 'HOT / OVERCLOCKED',
+        desc: 'Sub-atomic quantum computing array delivering 12.8 PetaFlops of synchronized biological neuro-processing with automated liquid thermal dispersal.',
+        specs: { latency: '0.12 ms', bandwidth: '18.4 TB/s', power: '98.5 hrs', shape: 'cube' }
+      },
+      {
+        id: 'NEURO-X',
+        name: 'Synapse Ghost Link IV',
+        category: 'Neural Implants',
+        price: 4200,
+        badge: 'STEALTH SPEC',
+        desc: 'Cerebral cortex overlay enabling zero-latency wireless brain-computer interfacing with automatic sensor noise suppression.',
+        specs: { latency: '0.04 ms', bandwidth: '9.2 TB/s', power: '140 hrs', shape: 'torus' }
+      },
+      {
+        id: 'ARM-TITAN',
+        name: 'Valkyrie Carbon Bionic Arm',
+        category: 'Cybernetics',
+        price: 12500,
+        badge: 'TITANIUM GRADE',
+        desc: 'Class 4 military prosthetics forged with woven graphene, integrated micro-servos, and 2.4-ton hydraulic crush capacity.',
+        specs: { latency: '0.45 ms', bandwidth: '4.8 TB/s', power: '72.0 hrs', shape: 'cylinder' }
+      },
+      {
+        id: 'EXO-PHANTOM',
+        name: 'Phantom Nanite Infiltration Suit',
+        category: 'Exosuits',
+        price: 24900,
+        badge: 'TACTICAL ELITE',
+        desc: 'Full-body kinetic dispersal armor capable of optical bending, active heat-signature baffling, and ballistic impact absorption.',
+        specs: { latency: '0.30 ms', bandwidth: '6.4 TB/s', power: '48.0 hrs', shape: 'octahedron' }
+      },
+      {
+        id: 'OCULAR-PRO',
+        name: 'Ocular-9 Holographic Retina',
+        category: 'Cybernetics',
+        price: 3600,
+        badge: 'AUGMENTED HUD',
+        desc: 'Full-spectrum ocular unit with multi-band thermal imagery, target projection telemetry, and 80x lossless optical magnification.',
+        specs: { latency: '0.01 ms', bandwidth: '24.0 TB/s', power: '360 hrs', shape: 'sphere' }
+      },
+      {
+        id: 'WEAPON-PULSE',
+        name: 'Hyperion Plasma Scatter Pistol',
+        category: 'Energy Weapons',
+        price: 15800,
+        badge: 'HIGH HAZARD',
+        desc: 'Compact pulse weapon firing ionized plasma bolts with built-in magnetic containment coils and biometric owner locks.',
+        specs: { latency: '0.08 ms', bandwidth: '1.2 TB/s', power: '24.0 hrs', shape: 'cone' }
+      },
+      {
+        id: 'NEURAL-BOOST',
+        name: 'Aether Neuro-Stim Dispenser',
+        category: 'Neural Implants',
+        price: 1950,
+        badge: 'BIO-ENHANCER',
+        desc: 'Autonomous subdermal micro-injector delivering targeted nootropic nanites directly to dopamine & adrenaline receptors during stress spikes.',
+        specs: { latency: '0.02 ms', bandwidth: '2.1 TB/s', power: '200 hrs', shape: 'dodecahedron' }
+      },
+      {
+        id: 'DRIVE-WARP',
+        name: 'Void-Drive Telemetry Unit',
+        category: 'Quantum Hardware',
+        price: 32000,
+        badge: 'EXPERIMENTAL',
+        desc: 'Sub-space navigation relay designed for deep orbital vessels needing immediate real-time trajectory computing across wormhole anomalies.',
+        specs: { latency: '0.005 ms', bandwidth: '64.0 TB/s', power: '12 hrs', shape: 'icosahedron' }
+      }
+    ];
+
+    const CURRENCY_RATES = {
+      CREDITS: { symbol: '₢', rate: 1.0, precision: 0 },
+      NEO_ETH: { symbol: 'Ξ', rate: 0.00031, precision: 3 },
+      SOL_PRIME: { symbol: '◎', rate: 0.0062, precision: 2 }
+    };
+
+    let currentCurrency = 'CREDITS';
+    let currentFilter = 'all';
+    let searchQuery = '';
+    let cart = [];
+    let modalSelectedProduct = null;
+
+    /* ==========================================================================
+       2. THREE.JS 3D HOLOGRAM SIMULATION ENGINE
+       ========================================================================== */
+    // Hero 3D Viewer variables
+    let heroScene, heroCamera, heroRenderer, heroMesh;
+    let heroWireframe = true;
+
+    // Modal 3D Viewer variables
+    let modalScene, modalCamera, modalRenderer, modalMesh;
+    let modalWireframe = false;
+    let modalAutoRotate = true;
+
+    function initHeroThreeJS() {
+      const container = document.getElementById('heroCanvasContainer');
+      const canvas = document.getElementById('heroThreeCanvas');
+      if (!container || !canvas) return;
+
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+
+      heroScene = new THREE.Scene();
+      heroCamera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+      heroCamera.position.z = 4.5;
+
+      heroRenderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+      heroRenderer.setSize(width, height);
+      heroRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      // Create Holographic Mesh
+      const geometry = new THREE.IcosahedronGeometry(1.6, 2);
+      const material = new THREE.MeshBasicMaterial({
+        color: 0x00f2ff,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.85
+      });
+      heroMesh = new THREE.Mesh(geometry, material);
+      heroScene.add(heroMesh);
+
+      // Inner glowing core
+      const coreGeo = new THREE.SphereGeometry(0.8, 16, 16);
+      const coreMat = new THREE.MeshBasicMaterial({
+        color: 0xb026ff,
+        wireframe: false,
+        transparent: true,
+        opacity: 0.3
+      });
+      const coreMesh = new THREE.Mesh(coreGeo, coreMat);
+      heroMesh.add(coreMesh);
+
+      // Drag to rotate interactions
+      let isDragging = false;
+      let prevMousePos = { x: 0, y: 0 };
+
+      container.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        prevMousePos = { x: e.clientX, y: e.clientY };
+      });
+      window.addEventListener('mouseup', () => isDragging = false);
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging || !heroMesh) return;
+        const deltaX = e.clientX - prevMousePos.x;
+        const deltaY = e.clientY - prevMousePos.y;
+        heroMesh.rotation.y += deltaX * 0.01;
+        heroMesh.rotation.x += deltaY * 0.01;
+        prevMousePos = { x: e.clientX, y: e.clientY };
+      });
+
+      // Touch events
+      container.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) {
+          isDragging = true;
+          prevMousePos = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        }
+      });
+      window.addEventListener('touchend', () => isDragging = false);
+      window.addEventListener('touchmove', (e) => {
+        if (!isDragging || !heroMesh || e.touches.length !== 1) return;
+        const deltaX = e.touches[0].clientX - prevMousePos.x;
+        const deltaY = e.touches[0].clientY - prevMousePos.y;
+        heroMesh.rotation.y += deltaX * 0.01;
+        heroMesh.rotation.x += deltaY * 0.01;
+        prevMousePos = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      });
+
+      // Hide loader
+      const loader = document.getElementById('canvasLoader');
+      if (loader) loader.style.display = 'none';
+
+      // Animation Loop
+      function animate() {
+        requestAnimationFrame(animate);
+        if (heroMesh) {
+          heroMesh.rotation.y += 0.005;
+          heroMesh.rotation.x += 0.002;
+        }
+        heroRenderer.render(heroScene, heroCamera);
+      }
+      animate();
+
+      window.addEventListener('resize', () => {
+        if (!container || !heroRenderer || !heroCamera) return;
+        const w = container.clientWidth;
+        const h = container.clientHeight;
+        heroCamera.aspect = w / h;
+        heroCamera.updateProjectionMatrix();
+        heroRenderer.setSize(w, h);
+      });
+    }
+
+    function toggleWireframeHero() {
+      heroWireframe = !heroWireframe;
+      if (heroMesh) {
+        heroMesh.material.wireframe = heroWireframe;
+      }
+      document.getElementById('wireframeHeroStatus').innerText = heroWireframe ? 'ON' : 'OFF';
+    }
+
+    // Modal Hologram Viewer
+    function initModalThreeJS(shapeType) {
+      const canvas = document.getElementById('modalThreeCanvas');
+      if (!canvas) return;
+      const parent = canvas.parentElement;
+      const width = parent.clientWidth;
+      const height = parent.clientHeight;
+
+      if (!modalRenderer) {
+        modalScene = new THREE.Scene();
+        modalCamera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+        modalCamera.position.z = 4.5;
+
+        modalRenderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+        modalRenderer.setSize(width, height);
+        modalRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        // Light
+        const pLight = new THREE.PointLight(0x00f2ff, 2, 50);
+        pLight.position.set(2, 4, 3);
+        modalScene.add(pLight);
+
+        let isDragging = false;
+        let prevMousePos = { x: 0, y: 0 };
+        canvas.addEventListener('mousedown', (e) => {
+          isDragging = true;
+          prevMousePos = { x: e.clientX, y: e.clientY };
+        });
+        window.addEventListener('mouseup', () => isDragging = false);
+        window.addEventListener('mousemove', (e) => {
+          if (!isDragging || !modalMesh) return;
+          modalMesh.rotation.y += (e.clientX - prevMousePos.x) * 0.01;
+          modalMesh.rotation.x += (e.clientY - prevMousePos.y) * 0.01;
+          prevMousePos = { x: e.clientX, y: e.clientY };
+        });
+
+        function animateModal() {
+          requestAnimationFrame(animateModal);
+          if (modalMesh && modalAutoRotate) {
+            modalMesh.rotation.y += 0.01;
+          }
+          modalRenderer.render(modalScene, modalCamera);
+        }
+        animateModal();
+      }
+
+      // Clear previous mesh
+      if (modalMesh) {
+        modalScene.remove(modalMesh);
+      }
+
+      // Generate Geometry dynamically based on item shape
+      let geo;
+      switch (shapeType) {
+        case 'cube': geo = new THREE.BoxGeometry(1.8, 1.8, 1.8); break;
+        case 'torus': geo = new THREE.TorusGeometry(1.2, 0.45, 16, 40); break;
+        case 'cylinder': geo = new THREE.CylinderGeometry(0.8, 0.8, 2, 24); break;
+        case 'octahedron': geo = new THREE.OctahedronGeometry(1.6); break;
+        case 'sphere': geo = new THREE.SphereGeometry(1.4, 32, 32); break;
+        case 'cone': geo = new THREE.ConeGeometry(1.1, 2.2, 24); break;
+        case 'dodecahedron': geo = new THREE.DodecahedronGeometry(1.5); break;
+        default: geo = new THREE.IcosahedronGeometry(1.5, 1);
+      }
+
+      const mat = new THREE.MeshStandardMaterial({
+        color: 0x00f2ff,
+        emissive: 0x072535,
+        wireframe: modalWireframe,
+        roughness: 0.2,
+        metalness: 0.9,
+      });
+
+      modalMesh = new THREE.Mesh(geo, mat);
+      modalScene.add(modalMesh);
+    }
+
+    function toggleModalWireframe() {
+      modalWireframe = !modalWireframe;
+      if (modalMesh) modalMesh.material.wireframe = modalWireframe;
+      document.getElementById('modalWireframeLabel').innerText = modalWireframe ? 'ON' : 'OFF';
+    }
+
+    function toggleModalRotation() {
+      modalAutoRotate = !modalAutoRotate;
+      document.getElementById('modalSpinLabel').innerText = modalAutoRotate ? 'AUTO' : 'PAUSED';
+    }
+
+    /* ==========================================================================
+       3. UI RENDERING & CURRENCY FORMATTING
+       ========================================================================== */
+    function formatPrice(baseCredits) {
+      const cur = CURRENCY_RATES[currentCurrency];
+      const converted = (baseCredits * cur.rate).toLocaleString('en-US', {
+        minimumFractionDigits: cur.precision,
+        maximumFractionDigits: cur.precision
+      });
+      return `${cur.symbol} ${converted}`;
+    }
+
+    function changeCurrency(newCur) {
+      currentCurrency = newCur;
+      renderCatalog();
+      updateCartUI();
+      // Update featured hero price
+      document.getElementById('heroFeaturedPrice').innerText = formatPrice(8450);
+      showToast(`Currency re-calibrated to ${newCur}`);
+    }
+
+    function renderCatalog() {
+      const grid = document.getElementById('productsGrid');
+      const emptyState = document.getElementById('emptyCatalogState');
+      const countDisplay = document.getElementById('itemCountDisplay');
+      if (!grid) return;
+
+      const filtered = PRODUCTS.filter(item => {
+        const matchesCategory = (currentFilter === 'all') || (item.category === currentFilter);
+        const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                              item.desc.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                              item.category.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesSearch;
+      });
+
+      countDisplay.innerText = filtered.length;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+      emptyState.classList.add('hidden');
+
+      grid.innerHTML = filtered.map(item => `
+        <div class="glass-panel rounded-lg border border-cyan-500/20 p-5 flex flex-col justify-between hover-glow group relative">
+          <!-- Top Hologram Tag -->
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-cyan-950/80 text-neonCyan border border-cyan-500/30">
+              ${item.category}
+            </span>
+            <span class="text-[9px] font-mono tracking-widest text-neonViolet font-bold px-1.5 py-0.5 rounded bg-violet-950/40 border border-violet-500/30">
+              ${item.badge}
+            </span>
+          </div>
+
+          <!-- Product Simulation Graphic Box -->
+          <div onclick="openHologramModal('${item.id}')" class="relative w-full h-44 bg-void/90 rounded border border-slate-800 flex items-center justify-center cursor-pointer group-hover:border-cyan-500/50 transition-colors overflow-hidden">
+            <div class="absolute inset-0 scanlines opacity-30"></div>
+            <!-- Dynamic Geometric Icon Representation -->
+            <div class="text-neonCyan group-hover:scale-110 transition-transform duration-300">
+              ${getIconForShape(item.specs.shape)}
+            </div>
+            
+            <span class="absolute bottom-2 left-2 text-[10px] font-mono text-slate-400 group-hover:text-neonCyan flex items-center gap-1 bg-black/70 px-2 py-0.5 rounded">
+              <svg class="w-3 h-3 text-neonCyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              Inspect 3D Wireframe
+            </span>
+          </div>
+
+          <!-- Title & Description -->
+          <div class="mt-4 flex-1">
+            <h3 class="font-orbitron font-bold text-white text-base group-hover:text-neonCyan transition-colors">${item.name}</h3>
+            <p class="text-xs text-slate-400 font-rajdhani mt-1.5 line-clamp-2">${item.desc}</p>
+          </div>
+
+          <!-- Neural Specs Mini Bar -->
+          <div class="grid grid-cols-2 gap-2 my-3 py-2 border-y border-slate-800 font-mono text-[10px]">
+            <div>
+              <span class="text-slate-500 block">LATENCY</span>
+              <span class="text-neonCyan font-bold">${item.specs.latency}</span>
+            </div>
+            <div>
+              <span class="text-slate-500 block">BANDWIDTH</span>
+              <span class="text-slate-300 font-bold">${item.specs.bandwidth}</span>
+            </div>
+          </div>
+
+          <!-- Price & Action -->
+          <div class="flex items-center justify-between pt-2">
+            <div>
+              <span class="text-[10px] font-mono text-slate-500 block">PRICE UNIT</span>
+              <span class="font-mono font-bold text-lg text-white">${formatPrice(item.price)}</span>
+            </div>
+            <button onclick="addToCart('${item.id}')" class="px-3.5 py-2 bg-voidcard border border-cyan-500 text-neonCyan hover:bg-neonCyan hover:text-void font-orbitron font-bold text-xs uppercase tracking-wider rounded transition-all shadow-sm hover:shadow-cyan-glow flex items-center gap-1.5">
+              <span>+ SYNAPSE</span>
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function getIconForShape(shape) {
+      // Inline futuristic vector shapes
+      switch (shape) {
+        case 'cube':
+          return `<svg class="w-16 h-16 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>`;
+        case 'torus':
+          return `<svg class="w-16 h-16 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4"></circle></svg>`;
+        case 'cylinder':
+          return `<svg class="w-16 h-16 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>`;
+        case 'octahedron':
+          return `<svg class="w-16 h-16 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><polygon points="12,2 22,12 12,22 2,12"></polygon><line x1="2" y1="12" x2="22" y2="12"></line><line x1="12" y1="2" x2="12" y2="22"></line></svg>`;
+        case 'sphere':
+          return `<svg class="w-16 h-16 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>`;
+        default:
+          return `<svg class="w-16 h-16 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><polygon points="12 2 19 8.5 19 15.5 12 22 5 15.5 5 8.5 12 2"></polygon></svg>`;
+      }
+    }
+
+    function setFilter(cat) {
+      currentFilter = cat;
+      // Update pills UI
+      document.querySelectorAll('.cat-pill').forEach(pill => {
+        if (pill.innerText.trim().toUpperCase() === cat.toUpperCase() || (cat === 'all' && pill.innerText.trim() === 'ALL')) {
+          pill.className = 'cat-pill active px-3.5 py-1.5 rounded border border-cyan-500 bg-cyan-950/60 text-neonCyan font-bold transition-all';
+        } else {
+          pill.className = 'cat-pill px-3.5 py-1.5 rounded border border-slate-800 bg-voidcard text-slate-400 hover:border-cyan-500 hover:text-white transition-all';
+        }
+      });
+      renderCatalog();
+    }
+
+    function handleSearch(val) {
+      searchQuery = val;
+      renderCatalog();
+    }
+
+    /* ==========================================================================
+       4. MODAL INSPECTION SYSTEM
+       ========================================================================== */
+    function openHologramModal(productId) {
+      const product = PRODUCTS.find(p => p.id === productId);
+      if (!product) return;
+      modalSelectedProduct = product;
+
+      document.getElementById('modalProductTitle').innerText = product.name;
+      document.getElementById('modalCategoryBadge').innerText = product.category;
+      document.getElementById('modalProductPrice').innerText = formatPrice(product.price);
+      document.getElementById('modalProductDesc').innerText = product.desc;
+
+      document.getElementById('modalSpecLatency').innerText = product.specs.latency;
+      document.getElementById('modalSpecBandwidth').innerText = product.specs.bandwidth;
+      document.getElementById('modalSpecPower').innerText = product.specs.power;
+
+      const addBtn = document.getElementById('modalAddToCartBtn');
+      addBtn.onclick = () => {
+        addToCart(product.id);
+        closeHologramModal();
+      };
+
+      document.getElementById('hologramModal').classList.remove('hidden');
+
+      // Initialize 3D renderer for this product shape
+      setTimeout(() => {
+        initModalThreeJS(product.specs.shape);
+      }, 50);
+    }
+
+    function closeHologramModal() {
+      document.getElementById('hologramModal').classList.add('hidden');
+    }
+
+    /* ==========================================================================
+       5. CART & BIOMETRIC CHECKOUT PIPELINE
+       ========================================================================== */
+    function addToCart(productId) {
+      const product = PRODUCTS.find(p => p.id === productId);
+      if (!product) return;
+
+      const existing = cart.find(item => item.id === productId);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ ...product, quantity: 1 });
+      }
+
+      updateCartUI();
+      showToast(`Added [${product.name}] to Synapse Cart`);
+    }
+
+    function quickAddFeaturedHero() {
+      addToCart('CORE-09');
+    }
+
+    function changeCartItemQty(productId, delta) {
+      const index = cart.findIndex(item => item.id === productId);
+      if (index === -1) return;
+
+      cart[index].quantity += delta;
+      if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+      }
+      updateCartUI();
+    }
+
+    function toggleCartDrawer(open) {
+      const drawer = document.getElementById('cartDrawer');
+      if (open) {
+        drawer.classList.remove('translate-x-full');
+      } else {
+        drawer.classList.add('translate-x-full');
+      }
+    }
+
+    function updateCartUI() {
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      document.getElementById('cartCountBadge').innerText = totalItems;
+
+      const cartList = document.getElementById('cartItemsList');
+      if (cart.length === 0) {
+        cartList.innerHTML = `
+          <div class="h-full flex flex-col items-center justify-center text-center text-slate-500 py-16">
+            <svg class="w-12 h-12 mb-2 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+            <p class="font-mono text-sm">CART MATRIX EMPTY</p>
+            <p class="text-xs text-slate-600 mt-1">No cybernetic implants mapped to current session.</p>
+          </div>
+        `;
+      } else {
+        cartList.innerHTML = cart.map(item => `
+          <div class="flex items-center justify-between bg-void p-3 rounded border border-slate-800 text-xs">
+            <div class="flex-1 pr-2">
+              <h4 class="font-orbitron font-bold text-white text-xs">${item.name}</h4>
+              <p class="font-mono text-neonCyan mt-0.5">${formatPrice(item.price)}</p>
+            </div>
+            
+            <div class="flex items-center gap-2 font-mono">
+              <button onclick="changeCartItemQty('${item.id}', -1)" class="w-6 h-6 rounded bg-slate-900 border border-slate-700 text-slate-300 hover:border-neonCyan hover:text-white flex items-center justify-center">-</button>
+              <span class="w-4 text-center font-bold text-white">${item.quantity}</span>
+              <button onclick="changeCartItemQty('${item.id}', 1)" class="w-6 h-6 rounded bg-slate-900 border border-slate-700 text-slate-300 hover:border-neonCyan hover:text-white flex items-center justify-center">+</button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Calculations
+      const subtotalCredits = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      const taxCredits = subtotalCredits * 0.04;
+      const totalCredits = subtotalCredits + taxCredits;
+
+      document.getElementById('cartSubtotalText').innerText = formatPrice(subtotalCredits);
+      document.getElementById('cartTaxText').innerText = formatPrice(taxCredits);
+      document.getElementById('cartTotalText').innerText = formatPrice(totalCredits);
+    }
+
+    // Biometric Retinal Checkout Flow
+    function initiateBiometricCheckout() {
+      if (cart.length === 0) {
+        showToast('Cart matrix is empty. Add hardware first.');
+        return;
+      }
+      toggleCartDrawer(false);
+      
+      const modal = document.getElementById('checkoutModal');
+      const progressBar = document.getElementById('checkoutProgressBar');
+      const title = document.getElementById('checkoutStateTitle');
+      const desc = document.getElementById('checkoutStateDesc');
+      const log = document.getElementById('checkoutTelemetryLog');
+      const actions = document.getElementById('checkoutSuccessActions');
+
+      modal.classList.remove('hidden');
+      progressBar.style.width = '0%';
+      actions.classList.add('hidden');
+      title.innerText = 'SYNAPSE BIOMETRIC AUTH';
+      desc.innerText = 'ALIGNING OPTIC RETINA WITH QUANTUM NODE...';
+      log.innerHTML = `<div>&gt; Establishing encrypted orbital stream...</div>`;
+
+      // Multi-phase simulated scan
+      let step = 0;
+      const steps = [
+        { pct: '25%', msg: '&gt; Retinal iris frequency matched: ID 0x892A-CYBER', delay: 800 },
+        { pct: '60%', msg: '&gt; Quantum signature verified with Syndicate Reserve.', delay: 1600 },
+        { pct: '90%', msg: '&gt; Reallocating credit ledger from sector balance...', delay: 2400 },
+        { pct: '100%', msg: '&gt; TRANSACTION COMPLETED. Delivery drop-pod dispatched.', delay: 3200 }
+      ];
+
+      steps.forEach(s => {
+        setTimeout(() => {
+          progressBar.style.width = s.pct;
+          const line = document.createElement('div');
+          line.innerHTML = s.msg;
+          log.appendChild(line);
+          log.scrollTop = log.scrollHeight;
+
+          if (s.pct === '100%') {
+            title.innerText = 'AUTHENTICATION GRANTED';
+            title.classList.add('text-neonGreen');
+            desc.innerText = 'HARDWARE SECURED VIA QUANTUM CONTRACT #9940';
+            actions.classList.remove('hidden');
+            cart = [];
+            updateCartUI();
+          }
+        }, s.delay);
+      });
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkoutModal').classList.add('hidden');
+    }
+
+    /* ==========================================================================
+       6. AI CONCIERGE ('AURA') INTERACTIVE DIALOGUE
+       ========================================================================== */
+    function toggleAuraChat() {
+      const box = document.getElementById('auraChatBox');
+      box.classList.toggle('hidden');
+    }
+
+    function submitAuraMessage() {
+      const input = document.getElementById('auraInput');
+      const txt = input.value.trim();
+      if (!txt) return;
+      askAura(txt);
+      input.value = '';
+    }
+
+    function askAura(queryText) {
+      const messagesContainer = document.getElementById('auraMessages');
+      
+      // User message
+      const userDiv = document.createElement('div');
+      userDiv.className = 'p-2 bg-cyan-950/40 rounded border border-cyan-800/40 text-cyan-200 text-right';
+      userDiv.innerHTML = `<strong class="text-white">YOU:</strong> ${queryText}`;
+      messagesContainer.appendChild(userDiv);
+
+      // AI Response generation
+      setTimeout(() => {
+        let answer = "Query processed against our neural archives.";
+        const q = queryText.toLowerCase();
+
+        if (q.includes('latency')) {
+          answer = "For ultra-low latency, inspect the 'Synapse Ghost Link IV' (0.04 ms) or 'Ocular-9 Holographic Retina' (0.01 ms). Zero cerebral lag guaranteed.";
+        } else if (q.includes('combat') || q.includes('tactical')) {
+          answer = "Optimal loadout: 'Phantom Nanite Infiltration Suit' for active camouflage paired with the 'Hyperion Plasma Scatter Pistol'.";
+        } else if (q.includes('checkout') || q.includes('pay') || q.includes('safe')) {
+          answer = "Biometric Retinal Checkout executes via an unhackable 512-bit quantum ledger with autonomous nanite verification.";
+        } else if (q.includes('hello') || q.includes('hi')) {
+          answer = "Salutations. Which biological deficiency would you like to upgrade today?";
+        } else {
+          answer = "Telemetry noted. All our neural wetware and cybernetics are certified by the Sector 07 Syndicate with a 50 solar cycle guarantee.";
+        }
+
+        const auraDiv = document.createElement('div');
+        auraDiv.className = 'p-2 bg-void rounded border border-slate-800 text-slate-300';
+        auraDiv.innerHTML = `<strong class="text-neonCyan">AURA:</strong> ${answer}`;
+        messagesContainer.appendChild(auraDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      }, 400);
+
+      const box = document.getElementById('auraChatBox');
+      box.classList.remove('hidden');
+    }
+
+    /* ==========================================================================
+       7. UTILITY & TOAST NOTIFICATIONS
+       ========================================================================== */
+    function showToast(message) {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = 'glass-panel border-l-4 border-neonCyan px-4 py-3 rounded shadow-cyan-glow text-xs font-mono text-white flex items-center gap-2 transform transition-all duration-300 translate-y-2 opacity-0 pointer-events-auto';
+      toast.innerHTML = `
+        <span class="w-2 h-2 rounded-full bg-neonCyan"></span>
+        <span>${message}</span>
+      `;
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+      }, 50);
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+
+    function simulateSubscribe() {
+      showToast('Sub-Ether Neural Feed Linked. Frequency Encrypted.');
+    }
+
+    // Dynamic latency simulator in top bar
+    setInterval(() => {
+      const ping = document.getElementById('pingValue');
+      if (ping) {
+        ping.innerText = Math.floor(9 + Math.random() * 6);
+      }
+    }, 4000);
+
+    /* ==========================================================================
+       8. INITIALIZATION ON WINDOW LOAD
+       ========================================================================== */
+    window.onload = function() {
+      renderCatalog();
+      updateCartUI();
+      initHeroThreeJS();
+    };
+  </script>
+</body>
+</html>
